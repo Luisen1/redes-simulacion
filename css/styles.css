@@ -1,0 +1,114 @@
+﻿/* Estilos Globales y Técnicos para el Simulador de Interconexión UPTC */
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Inter:wght@300;400;500;600;700;800&family=Cinzel:wght@600;800&display=swap');
+
+:root {
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'Fira Code', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --font-serif: 'Cinzel', Georgia, serif;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #030712;
+  color: #f3f4f6;
+  overflow-x: hidden;
+}
+
+/* Scrollbar personalizado de alta tecnología */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0b0f19;
+}
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #06b6d4;
+}
+
+/* Tipografía monoespaciada para elementos de red */
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+/* Animaciones sutiles */
+@keyframes signalPulse {
+  0% { opacity: 0.4; transform: scale(0.98); }
+  50% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0.4; transform: scale(0.98); }
+}
+
+.animate-signal {
+  animation: signalPulse 2s infinite ease-in-out;
+}
+
+@keyframes laserSweep {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.laser-line::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(6, 182, 212, 0.8), transparent);
+  animation: laserSweep 1.5s infinite linear;
+}
+
+/* Capas OSI */
+.osi-layer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 10px;
+  font-size: 11px;
+  border-radius: 6px;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(51, 65, 85, 0.4);
+  transition: all 0.2s ease;
+}
+
+/* Estilos de Impresión para Certificado */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #certModal, #certModal * {
+    visibility: visible;
+  }
+  #certModal {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: white !important;
+    color: black !important;
+    padding: 0;
+    margin: 0;
+  }
+  #diplomaPaper {
+    background: #ffffff !important;
+    color: #111827 !important;
+    border: 4px double #000000 !important;
+    box-shadow: none !important;
+  }
+  #diplomaPaper * {
+    color: #111827 !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+}
