@@ -1,4 +1,4 @@
-﻿# Plataforma Interactiva y Simulador de Dispositivos de Interconexión
+# Plataforma Interactiva y Simulador de Dispositivos de Interconexión
 ## Concentradores (Hubs), Repetidores y Pasarelas (Gateways)
 
 Simulador educativo de hubs, repetidores y gateways para la asignatura Redes de Datos. La aplicación permite explorar los conceptos mediante animaciones, métricas calculadas y escenarios de comunicación paso a paso.
@@ -57,23 +57,22 @@ Servir el proyecto por HTTP evita restricciones del navegador relacionadas con `
   - Cálculo en vivo de Atenuación (dB), SNR, Bit Error Rate (BER), Jitter y Throughput efectivo.
   - Modo Extensor Wi-Fi: Demostración visual de la penalización del 50% por half-duplex en canal compartido.
 
-- **4. Simulador de Gateway & Pila OSI Multi-Capa:**
-  - Desglose visual de las 7 capas OSI en origen y destino con la pasarela en el centro.
-  - **Escenario 1 (Industrial):** Sensor/PLC con Modbus RTU serial (RS-485) ↔ Gateway Advantech EKI-1221 ↔ Servidor SCADA Ethernet (Modbus TCP en puerto 502).
-  - **Escenario 2 (Telecomunicaciones):** Teléfono analógico PSTN ↔ Gateway H.323 (Caso SUPTEL) ↔ Red IP Call Center CTI/ACD con códec G.711.
-  - Máquina de estados paso a paso (Decapsulación de cabeceras, traducción semántica, reempaquetado).
-  - Inspector de paquetes estilo analizador de protocolos (Hex Dump y decodificación de campos).
+- **4. Simulador de Gateway & Dinámica Real de Redes:**
+  - **Topologías con dispositivos reales:** Portátil, Teléfono inteligente, Access Point, Switch, Router / Default Gateway, Pasarela de Protocolos (Industrial e IoT), Servidor Web, Servidor SCADA, PLC y Sensores IoT.
+  - **Diferenciación conceptual clave:** Default Gateway (salto L3, enrutamiento y NAT/PAT) frente a Protocol Gateway (traducción semántica y de formatos en capas 3 a 7).
+  - **5 Escenarios de red completos:**
+    1. *Portátil Wi-Fi a Servidor Web (18 pasos reales):* Asociación 802.11, DHCP DORA, ARP Request/Reply, DNS UDP 53, TCP 3-Way Handshake, traducción NAT (PAT) en Gateway, petición HTTPS GET y entrega de página HTML.
+    2. *Teléfono Móvil en Red Residencial:* Conexión Wi-Fi a router multifunción hogareño (AP + Switch + Router + NAT) y acceso a Internet.
+    3. *Portátil a PLC vía Gateway Industrial:* Demostración simultánea del Default Gateway (Router L3) y del Protocol Gateway (traductor Modbus TCP a Modbus RTU serial).
+    4. *Entorno Industrial SCADA (16 pasos reales):* Flujo bidireccional exhaustivo entre PLC en bus RS-485 y servidor SCADA corporativo.
+    5. *Internet de las Cosas (IoT) a la Nube:* Sensor ESP32 emitiendo MQTT, recepción en Gateway IoT Edge, encapsulado seguro TLS 1.3 y publicación en broker cloud (AWS IoT).
+  - **Lienzo de Topología Dinámica (Canvas):** Animación fluida de tramas con diferenciación de medios (Ethernet cyan, Wi-Fi RF amarillo, Bus RS-485 naranja, WAN/Internet púrpura).
+  - **Inspector de Dispositivos:** Ventana modal que expone en vivo configuración IP, máscara, MAC, tablas ARP, tablas de enrutamiento, tablas NAT y sockets activos (`netstat`).
+  - **Analizador de Tramas y Paquetes (L2-L7):** Desglose detallado de cabeceras de enlace (MAC, EtherType), red (IP, TTL), transporte (puertos, banderas TCP) y payload de aplicación, acompañado de explicación en lenguaje cotidiano.
+  - **Motor de Inyección y Diagnóstico de Fallas:** Simulación de 8 fallas reales (Gateway caído, cable desconectado, Wi-Fi apagado, DNS timeout, DHCP/APIPA 169.254.x.x, error de gateway, puerto cerrado con RST, ruta inexistente) con diagnóstico paso a paso (qué, por qué, cómo se detecta y cómo se soluciona).
+  - **Matriz Interactiva de 5 Roles:** Comparativa profunda entre Switch (L2), Router (L3), Default Gateway, Protocol Gateway y Access Point.
 
-- **5. Asesor de Selección & Catálogos Reales:**
-  - Calculadora de ingeniería basada en los capítulos 7 y 8.
-  - Formulario de requerimientos con presets rápidos (Barco Pesquero, Planta Industrial, Campus 600m).
-  - Generador de Dictamen Técnico de Consultoría profesional con sustentación de Capacidad, Cobertura, Procesamiento y análisis de descarte.
-  - Catálogos interactivos con fichas técnicas y precios de referencia:
-    - Furuno HUB100, HUB102, HUB3000 (Hubs navales).
-    - Advantech ADAM-4572, EKI-1221-CE, EKI-1224-CE (Gateways Modbus seriales).
-    - Ubiquiti UACC-LRE, SPT 12-POE101, Transition Networks S3100-4040-NA (Repetidores de campus y fibra).
-
-- **6. Glosario Técnico Interactivo:**
+- **5. Glosario Técnico Interactivo:**
   - 24 términos técnicos oficiales con buscador en vivo y filtros por categoría.
 
 ## Arquitectura del proyecto

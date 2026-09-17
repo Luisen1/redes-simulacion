@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Controlador Principal de la Aplicación
  * UPTC - Redes de Datos 2026
  */
@@ -29,9 +29,12 @@ function initTabs() {
       tabPanes.forEach(pane => {
         if (pane.id === targetId) {
           pane.classList.remove("hidden");
-          // Si el panel contiene canvas, forzar redraw
+          // Si el panel contiene canvas, forzar resize y redraw
           if (targetId === "tab-hub" && window.hubSim) {
             // El simulador ya tiene requestAnimationFrame activo
+          }
+          if (targetId === "tab-gateway" && window.gwSim) {
+            window.gwSim.setupCanvas();
           }
         } else {
           pane.classList.add("hidden");
