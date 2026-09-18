@@ -1722,8 +1722,8 @@ class GatewaySimulator {
     document.querySelectorAll(".gw-role-btn").forEach((btn) => {
       const isSelected = btn.getAttribute("data-role") === roleKey;
       btn.className = isSelected
-        ? "gw-role-btn px-3 py-1.5 rounded text-xs font-semibold bg-purple-600 text-white shadow-md shadow-purple-900/50 transition"
-        : "gw-role-btn px-3 py-1.5 rounded text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 hover:text-white transition";
+        ? "gw-role-btn nav-tab-btn tab-active px-3.5 py-1.5 rounded-full text-xs font-semibold"
+        : "gw-role-btn nav-tab-btn tab-inactive px-3.5 py-1.5 rounded-full text-xs font-medium";
     });
     this.renderRoleCard();
   }
@@ -1735,44 +1735,44 @@ class GatewaySimulator {
 
     container.innerHTML = `
       <div class="space-y-4">
-        <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 pb-3">
+        <div class="flex flex-wrap items-center justify-between gap-2 border-b border-white/[0.08] pb-3.5">
           <div>
-            <span class="text-[10px] font-mono uppercase tracking-wider text-purple-400 font-bold">${data.badge}</span>
-            <h4 class="text-sm sm:text-base font-bold text-white mt-0.5">${data.title}</h4>
+            <span class="apple-badge apple-badge-purple text-[10px] font-mono uppercase tracking-wider">${data.badge}</span>
+            <h4 class="text-base font-bold text-white tracking-tight mt-1">${data.title}</h4>
           </div>
-          <span class="px-2.5 py-1 rounded bg-slate-800 text-xs font-mono text-cyan-300 border border-slate-700">${data.osiLayer}</span>
+          <span class="apple-badge apple-badge-blue text-xs font-mono">${data.osiLayer}</span>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 text-xs">
-          <div class="bg-slate-900/70 p-3 rounded-lg border border-slate-800/80">
-            <span class="text-[10px] font-mono text-slate-400 uppercase block mb-1">Criterio de Decision</span>
-            <p class="font-semibold text-slate-200">${data.addressing}</p>
+          <div class="apple-metric-card">
+            <span class="text-[10px] font-mono text-white/50 uppercase block mb-1">Criterio de Decisión</span>
+            <p class="font-semibold text-white/90">${data.addressing}</p>
           </div>
-          <div class="bg-slate-900/70 p-3 rounded-lg border border-slate-800/80">
-            <span class="text-[10px] font-mono text-slate-400 uppercase block mb-1">Unidad de Datos</span>
-            <p class="font-semibold text-slate-200">${data.decisionUnit}</p>
+          <div class="apple-metric-card">
+            <span class="text-[10px] font-mono text-white/50 uppercase block mb-1">Unidad de Datos</span>
+            <p class="font-semibold text-white/90">${data.decisionUnit}</p>
           </div>
-          <div class="bg-slate-900/70 p-3 rounded-lg border border-slate-800/80">
-            <span class="text-[10px] font-mono text-slate-400 uppercase block mb-1">Modificacion de Datos</span>
-            <p class="font-semibold text-slate-200">${data.modifiesData}</p>
+          <div class="apple-metric-card">
+            <span class="text-[10px] font-mono text-white/50 uppercase block mb-1">Modificación de Datos</span>
+            <p class="font-semibold text-white/90">${data.modifiesData}</p>
           </div>
-          <div class="bg-slate-900/70 p-3 rounded-lg border border-slate-800/80">
-            <span class="text-[10px] font-mono text-slate-400 uppercase block mb-1">Dominio de Colision</span>
-            <p class="font-semibold text-slate-200">${data.collisionDomain}</p>
+          <div class="apple-metric-card">
+            <span class="text-[10px] font-mono text-white/50 uppercase block mb-1">Dominio de Colisión</span>
+            <p class="font-semibold text-white/90">${data.collisionDomain}</p>
           </div>
-          <div class="bg-slate-900/70 p-3 rounded-lg border border-slate-800/80">
-            <span class="text-[10px] font-mono text-slate-400 uppercase block mb-1">Dominio de Difusion</span>
-            <p class="font-semibold text-slate-200">${data.broadcastDomain}</p>
+          <div class="apple-metric-card">
+            <span class="text-[10px] font-mono text-white/50 uppercase block mb-1">Dominio de Difusión</span>
+            <p class="font-semibold text-white/90">${data.broadcastDomain}</p>
           </div>
-          <div class="bg-slate-900/70 p-3 rounded-lg border border-slate-800/80">
-            <span class="text-[10px] font-mono text-slate-400 uppercase block mb-1">Ejemplos de Equipos Reales</span>
-            <p class="font-semibold text-cyan-300 font-mono text-[11px]">${data.realHardware}</p>
+          <div class="apple-metric-card">
+            <span class="text-[10px] font-mono text-white/50 uppercase block mb-1">Ejemplos de Equipos Reales</span>
+            <p class="font-semibold text-[#64D2FF] font-mono text-[11px]">${data.realHardware}</p>
           </div>
         </div>
 
-        <div class="bg-purple-950/30 border border-purple-800/50 rounded-lg p-3 text-xs text-purple-200 leading-relaxed">
-          <span class="font-bold text-purple-300 font-mono block mb-0.5">[FUNCION CLAVE EN RED]:</span>
-          ${data.keyFunction}
+        <div class="apple-card p-4 border border-purple-500/25 bg-purple-500/[0.08] text-xs text-purple-200 leading-relaxed rounded-2xl">
+          <span class="font-semibold text-[#BF5AF2] font-mono block mb-1 text-[11px] uppercase tracking-wider">[Función Clave en Red]:</span>
+          <p class="text-white/80">${data.keyFunction}</p>
         </div>
       </div>
     `;
@@ -2191,59 +2191,59 @@ class GatewaySimulator {
     if (title) title.textContent = `[ANALIZADOR DE TRAMAS]: ${step.title}`;
 
     content.innerHTML = `
-      <div class="space-y-4 text-xs font-sans">
+      <div class="space-y-3.5 text-xs font-sans">
         <!-- Human summary -->
-        <div class="bg-cyan-950/40 border border-cyan-800/60 p-3 rounded-lg text-cyan-200">
-          <span class="font-bold text-cyan-300 font-mono block mb-1">[SIGNIFICADO EN LA RED]:</span>
-          <p class="italic leading-relaxed">${p.humanNote || step.summary}</p>
+        <div class="apple-card p-3.5 border border-cyan-400/30 bg-cyan-500/[0.08] text-cyan-200 rounded-2xl">
+          <span class="font-bold text-[#64D2FF] font-mono block mb-1 text-[11px] uppercase tracking-wider">[Significado en la Red]:</span>
+          <p class="italic leading-relaxed text-white/90">${p.humanNote || step.summary}</p>
         </div>
 
         <!-- Layer 2 -->
-        <div class="bg-slate-950 p-3 rounded-lg border border-slate-800 space-y-1.5">
-          <div class="flex items-center justify-between border-b border-slate-800/80 pb-1">
-            <span class="font-mono font-bold text-cyan-400 uppercase">[CAPA 2 - ENLACE DE DATOS (Data Link)]</span>
-            <span class="font-mono text-[10px] text-slate-400">${p.layer2.type}</span>
+        <div class="apple-card p-3.5 space-y-2 rounded-2xl">
+          <div class="flex items-center justify-between border-b border-white/[0.08] pb-1.5">
+            <span class="font-mono font-bold text-[#64D2FF] uppercase">[Capa 2 · Enlace de Datos (Data Link)]</span>
+            <span class="apple-badge apple-badge-blue text-[10px]">${p.layer2.type}</span>
           </div>
           <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 font-mono text-[11px] pt-1">
-            <div><span class="text-slate-500 block text-[10px]">MAC ORIGEN:</span><span class="text-slate-200">${p.layer2.srcMac}</span></div>
-            <div><span class="text-slate-500 block text-[10px]">MAC DESTINO:</span><span class="text-slate-200">${p.layer2.dstMac}</span></div>
-            <div><span class="text-slate-500 block text-[10px]">ETHERTYPE / PROTO:</span><span class="text-cyan-300">${p.layer2.etherType}</span></div>
+            <div><span class="text-white/40 block text-[10px]">MAC ORIGEN:</span><span class="text-white/90">${p.layer2.srcMac}</span></div>
+            <div><span class="text-white/40 block text-[10px]">MAC DESTINO:</span><span class="text-white/90">${p.layer2.dstMac}</span></div>
+            <div><span class="text-white/40 block text-[10px]">ETHERTYPE / PROTO:</span><span class="text-[#64D2FF]">${p.layer2.etherType}</span></div>
           </div>
         </div>
 
         <!-- Layer 3 -->
-        <div class="bg-slate-950 p-3 rounded-lg border border-slate-800 space-y-1.5">
-          <div class="flex items-center justify-between border-b border-slate-800/80 pb-1">
-            <span class="font-mono font-bold text-emerald-400 uppercase">[CAPA 3 - RED (Network)]</span>
-            <span class="font-mono text-[10px] text-slate-400">Protocolo L3: ${p.layer3.proto}</span>
+        <div class="apple-card p-3.5 space-y-2 rounded-2xl">
+          <div class="flex items-center justify-between border-b border-white/[0.08] pb-1.5">
+            <span class="font-mono font-bold text-[#30D158] uppercase">[Capa 3 · Red (Network)]</span>
+            <span class="apple-badge apple-badge-green text-[10px]">L3: ${p.layer3.proto}</span>
           </div>
           <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 font-mono text-[11px] pt-1">
-            <div><span class="text-slate-500 block text-[10px]">IP ORIGEN:</span><span class="text-slate-200">${p.layer3.srcIp}</span></div>
-            <div><span class="text-slate-500 block text-[10px]">IP DESTINO:</span><span class="text-slate-200">${p.layer3.dstIp}</span></div>
-            <div><span class="text-slate-500 block text-[10px]">TTL (TIME TO LIVE):</span><span class="text-emerald-300">${p.layer3.ttl}</span></div>
+            <div><span class="text-white/40 block text-[10px]">IP ORIGEN:</span><span class="text-white/90">${p.layer3.srcIp}</span></div>
+            <div><span class="text-white/40 block text-[10px]">IP DESTINO:</span><span class="text-white/90">${p.layer3.dstIp}</span></div>
+            <div><span class="text-white/40 block text-[10px]">TTL:</span><span class="text-[#30D158]">${p.layer3.ttl}</span></div>
           </div>
         </div>
 
         <!-- Layer 4 -->
-        <div class="bg-slate-950 p-3 rounded-lg border border-slate-800 space-y-1.5">
-          <div class="flex items-center justify-between border-b border-slate-800/80 pb-1">
-            <span class="font-mono font-bold text-amber-400 uppercase">[CAPA 4 - TRANSPORTE (Transport)]</span>
-            <span class="font-mono text-[10px] text-slate-400">${p.layer4.proto}</span>
+        <div class="apple-card p-3.5 space-y-2 rounded-2xl">
+          <div class="flex items-center justify-between border-b border-white/[0.08] pb-1.5">
+            <span class="font-mono font-bold text-[#FF9F0A] uppercase">[Capa 4 · Transporte (Transport)]</span>
+            <span class="apple-badge apple-badge-amber text-[10px]">${p.layer4.proto}</span>
           </div>
           <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 font-mono text-[11px] pt-1">
-            <div><span class="text-slate-500 block text-[10px]">PUERTO ORIGEN:</span><span class="text-slate-200">${p.layer4.srcPort}</span></div>
-            <div><span class="text-slate-500 block text-[10px]">PUERTO DESTINO:</span><span class="text-slate-200">${p.layer4.dstPort}</span></div>
-            <div><span class="text-slate-500 block text-[10px]">BANDERAS / FLAGS:</span><span class="text-amber-300 font-bold">${p.layer4.flags}</span></div>
+            <div><span class="text-white/40 block text-[10px]">PUERTO ORIGEN:</span><span class="text-white/90">${p.layer4.srcPort}</span></div>
+            <div><span class="text-white/40 block text-[10px]">PUERTO DESTINO:</span><span class="text-white/90">${p.layer4.dstPort}</span></div>
+            <div><span class="text-white/40 block text-[10px]">BANDERAS:</span><span class="text-[#FF9F0A] font-bold">${p.layer4.flags}</span></div>
           </div>
         </div>
 
         <!-- Layer 7 / Payload -->
-        <div class="bg-slate-950 p-3 rounded-lg border border-purple-800/60 space-y-1.5">
-          <div class="flex items-center justify-between border-b border-purple-900/80 pb-1">
-            <span class="font-mono font-bold text-purple-300 uppercase">[CAPA 7 - APLICACION / CARGA UTIL (Payload)]</span>
-            <span class="font-mono text-[10px] text-purple-400">Datos Puros</span>
+        <div class="apple-card p-3.5 space-y-2 rounded-2xl border border-purple-500/30">
+          <div class="flex items-center justify-between border-b border-white/[0.08] pb-1.5">
+            <span class="font-mono font-bold text-[#BF5AF2] uppercase">[Capa 7 · Aplicación / Carga Útil]</span>
+            <span class="apple-badge apple-badge-purple text-[10px]">Payload</span>
           </div>
-          <pre class="bg-slate-900 p-2 rounded text-[11px] font-mono text-purple-200 overflow-x-auto whitespace-pre-wrap">${p.payload}</pre>
+          <pre class="bg-black/40 p-2.5 rounded-xl text-[11px] font-mono text-purple-200 overflow-x-auto whitespace-pre-wrap border border-white/[0.06]">${p.payload}</pre>
         </div>
       </div>
     `;

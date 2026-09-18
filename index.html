@@ -11,11 +11,16 @@
       theme: {
         extend: {
           colors: {
-            brand: {
-              400: "#22d3ee",
-              500: "#06b6d4",
-              600: "#0891b2",
-              950: "#083344",
+            apple: {
+              blue: "#0A84FF",
+              green: "#30D158",
+              indigo: "#5E5CE6",
+              orange: "#FF9F0A",
+              pink: "#FF375F",
+              purple: "#BF5AF2",
+              red: "#FF453A",
+              teal: "#64D2FF",
+              yellow: "#FFD60A"
             }
           }
         }
@@ -24,263 +29,274 @@
   </script>
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body class="bg-[#030712] text-slate-100 min-h-screen flex flex-col selection:bg-cyan-500 selection:text-black">
-  <header class="border-b border-slate-800/80 bg-slate-950/90 backdrop-blur sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3">
-      <div class="flex flex-col md:flex-row md:items-center justify-between gap-2">
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-lg bg-gradient-to-tr from-cyan-600 to-emerald-500 flex items-center justify-center text-slate-950 font-bold shadow-lg shadow-cyan-500/20 shrink-0">
+<body class="bg-black text-white min-h-screen flex flex-col selection:bg-[#0A84FF] selection:text-white">
+  <!-- Apple Liquid Glass Header (Floating Functional Layer) -->
+  <header class="apple-glass-nav sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3.5">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-3">
+        <div class="flex items-center gap-3.5">
+          <!-- Apple Squircle Icon with Hardware Highlight -->
+          <div class="w-11 h-11 rounded-[13px] bg-gradient-to-b from-[#0A84FF] to-[#0062CC] flex items-center justify-center text-white font-bold shadow-[0_4px_14px_rgba(10,132,255,0.4),inset_0_1px_0_rgba(255,255,255,0.35)] shrink-0 border border-white/20">
             <svg class="w-6 h-6 stroke-current fill-none stroke-2" viewBox="0 0 24 24">
-              <rect x="2" y="2" width="6" height="6" rx="1"/>
-              <rect x="16" y="2" width="6" height="6" rx="1"/>
-              <rect x="9" y="16" width="6" height="6" rx="1"/>
+              <rect x="2" y="2" width="6" height="6" rx="1.5"/>
+              <rect x="16" y="2" width="6" height="6" rx="1.5"/>
+              <rect x="9" y="16" width="6" height="6" rx="1.5"/>
               <path d="M5 8v3a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8"/>
               <path d="M12 13v3"/>
             </svg>
           </div>
           <div>
             <div class="flex items-center gap-2">
-              <span class="text-[11px] font-mono uppercase tracking-wider text-cyan-400 font-bold">UPTC · Redes de Datos 2026</span>
-              <span class="text-slate-600">|</span>
-              <span class="text-[11px] text-slate-400">Tunja, Colombia</span>
+              <span class="apple-badge apple-badge-blue text-[10px] uppercase font-mono tracking-wider">UPTC · Redes 2026</span>
+              <span class="text-white/20">|</span>
+              <span class="text-[11px] text-white/60 font-medium">Tunja, Colombia</span>
             </div>
-            <h1 class="text-base sm:text-lg font-extrabold text-white tracking-tight">
+            <h1 class="text-base sm:text-lg font-bold text-white tracking-tight mt-0.5">
               Concentradores (Hubs), Repetidores y Pasarelas (Gateways)
             </h1>
           </div>
         </div>
-        <div class="flex flex-wrap items-center gap-2 text-xs font-mono text-slate-400">
-          <span class="hidden lg:inline text-slate-500">Investigadores:</span>
-          <span class="bg-slate-900 px-2 py-1 rounded border border-slate-800 text-slate-300">L. Hernández</span>
-          <span class="bg-slate-900 px-2 py-1 rounded border border-slate-800 text-slate-300">D. Naranjo</span>
-          <span class="bg-slate-900 px-2 py-1 rounded border border-slate-800 text-slate-300">A. Forero</span>
+        <div class="flex flex-wrap items-center gap-2 text-xs font-mono">
+          <span class="hidden lg:inline text-white/40 text-[11px]">Investigadores:</span>
+          <span class="apple-badge apple-badge-gray">L. Hernández</span>
+          <span class="apple-badge apple-badge-gray">D. Naranjo</span>
+          <span class="apple-badge apple-badge-gray">A. Forero</span>
         </div>
       </div>
-      <nav class="flex overflow-x-auto gap-1 sm:gap-2 mt-3 pt-2 border-t border-slate-800/60 no-scrollbar">
-        <button data-tab="tab-theory" class="nav-tab-btn px-3.5 py-2 text-xs font-semibold rounded-t-lg border-b-2 border-cyan-400 text-cyan-400 bg-slate-800/80 transition flex items-center gap-2 shrink-0">
-           Fundamentos & Teoría
+      <!-- Apple Segmented Capsule Navigation -->
+      <nav class="apple-nav-capsule flex overflow-x-auto gap-1 mt-3.5 no-scrollbar">
+        <button data-tab="tab-theory" class="nav-tab-btn tab-active px-4 py-2 text-xs font-semibold flex items-center gap-2 shrink-0">
+          Fundamentos & Teoría
         </button>
-        <button data-tab="tab-hub" class="nav-tab-btn px-3.5 py-2 text-xs font-semibold rounded-t-lg border-b-2 border-transparent text-slate-400 hover:text-slate-200 transition flex items-center gap-2 shrink-0">
-           Simulador Hub & Colisiones
+        <button data-tab="tab-hub" class="nav-tab-btn tab-inactive px-4 py-2 text-xs font-medium flex items-center gap-2 shrink-0">
+          Simulador Hub & Colisiones
         </button>
-        <button data-tab="tab-repeater" class="nav-tab-btn px-3.5 py-2 text-xs font-semibold rounded-t-lg border-b-2 border-transparent text-slate-400 hover:text-slate-200 transition flex items-center gap-2 shrink-0">
+        <button data-tab="tab-repeater" class="nav-tab-btn tab-inactive px-4 py-2 text-xs font-medium flex items-center gap-2 shrink-0">
           Simulador Repetidor & Osciloscopio
         </button>
-        <button data-tab="tab-gateway" class="nav-tab-btn px-3.5 py-2 text-xs font-semibold rounded-t-lg border-b-2 border-transparent text-slate-400 hover:text-slate-200 transition flex items-center gap-2 shrink-0">
-           Simulador Gateway & Redes Reales
+        <button data-tab="tab-gateway" class="nav-tab-btn tab-inactive px-4 py-2 text-xs font-medium flex items-center gap-2 shrink-0">
+          Simulador Gateway & Redes Reales
         </button>
-        <button data-tab="tab-glossary" class="nav-tab-btn px-3.5 py-2 text-xs font-semibold rounded-t-lg border-b-2 border-transparent text-slate-400 hover:text-slate-200 transition flex items-center gap-2 shrink-0">
-           Glosario Técnico
+        <button data-tab="tab-glossary" class="nav-tab-btn tab-inactive px-4 py-2 text-xs font-medium flex items-center gap-2 shrink-0">
+          Glosario Técnico
         </button>
       </nav>
     </div>
   </header>
-  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 py-6">
+  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 py-7">
 
     <!-- ================= TAB 1: TEORÍA ================= -->
     <section id="tab-theory" class="tab-pane space-y-8">
-      <div class="relative overflow-hidden rounded-2xl bg-gradient-to-r from-slate-900 via-slate-900 to-cyan-950/40 border border-slate-800 p-6 sm:p-8 shadow-2xl">
-        <div class="max-w-3xl space-y-3">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-medium bg-cyan-950/80 border border-cyan-500/40 text-cyan-300">
-            <span>Universidad Pedagógica y Tecnológica de Colombia · Facultad de Ingeniería</span>
+      <!-- Apple Hero Keynote Card -->
+      <div class="apple-card p-6 sm:p-8 bg-gradient-to-b from-[#1C1C20] to-[#121216] border border-white/[0.12] shadow-2xl relative overflow-hidden">
+        <div class="max-w-3xl space-y-3.5">
+          <div class="inline-flex items-center gap-2">
+            <span class="apple-badge apple-badge-blue text-xs font-medium">Universidad Pedagógica y Tecnológica de Colombia · Ingeniería de Sistemas</span>
           </div>
-          <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight leading-tight">
+          <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight leading-snug">
             Estudio Técnico y Comparativo de Dispositivos de Interconexión de Redes
           </h2>
-          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
-            Este trabajo presenta un análisis riguroso de tres equipos fundamentales con niveles de abstracción dispares: el <strong>concentrador o hub</strong> (repetidor multipuerto de Capa 1), el <strong>repetidor</strong> (regenerador de señal 3R de Capa 1) y la <strong>pasarela o gateway</strong> (traductor semántico multi-capa Capas 3 a 7). A partir de especificaciones de catálogos comerciales (Furuno, Advantech, Ubiquiti, Transition Networks) y del caso real de la <strong>SUPTEL (Ecuador)</strong>, se sustentan las decisiones de diseño basadas en <em>Capacidad, Cobertura y Procesamiento</em>.
+          <p class="text-xs sm:text-sm text-white/75 leading-relaxed font-normal">
+            Análisis riguroso de tres equipos fundamentales con niveles de abstracción dispares: el <strong>concentrador o hub</strong> (repetidor multipuerto de Capa 1), el <strong>repetidor</strong> (regenerador de señal 3R de Capa 1) y la <strong>pasarela o gateway</strong> (traductor semántico multi-capa Capas 3 a 7). A partir de especificaciones de catálogos comerciales (Furuno, Advantech, Ubiquiti, Transition Networks) y del caso real de la <strong>SUPTEL (Ecuador)</strong>, se sustentan las decisiones de diseño basadas en <em>Capacidad, Cobertura y Procesamiento</em>.
           </p>
         </div>
       </div>
 
-      <!-- MAPA MODELO OSI -->
-      <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 sm:p-6 space-y-4">
-        <div class="flex items-center justify-between flex-wrap gap-2 border-b border-slate-800 pb-3">
+      <!-- MAPA MODELO OSI (Apple Layered Component) -->
+      <div class="apple-card p-5 sm:p-6 space-y-4">
+        <div class="flex items-center justify-between flex-wrap gap-2 border-b border-white/[0.08] pb-3.5">
           <div>
-            <h3 class="text-base font-bold text-white flex items-center gap-2">
-               Ubicación de los Dispositivos en el Modelo de Referencia OSI (ISO/IEC 7498-1)
+            <h3 class="text-base font-semibold text-white tracking-tight flex items-center gap-2">
+              Ubicación de los Dispositivos en el Modelo de Referencia OSI (ISO/IEC 7498-1)
             </h3>
-            <p class="text-xs text-slate-400">Diferenciación de capas físicas, enlace, red y aplicación</p>
+            <p class="text-xs text-white/60">Diferenciación de capas físicas, enlace, red y aplicación</p>
           </div>
-          <span class="text-xs font-mono text-cyan-400 bg-cyan-950/50 px-2.5 py-1 rounded border border-cyan-800">Forouzan & Tanenbaum</span>
+          <span class="apple-badge apple-badge-blue font-mono">Forouzan & Tanenbaum</span>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-7 gap-2 pt-2 text-center text-xs font-mono">
-          <div class="p-3 rounded-lg bg-purple-950/30 border border-purple-800/50 flex flex-col justify-between">
-            <span class="text-purple-400 font-bold">Capa 7</span>
-            <span class="text-slate-200 font-sans font-medium my-1">Aplicación</span>
-            <span class="text-[10px] bg-purple-900/60 text-purple-200 px-1 py-0.5 rounded font-bold">GATEWAY</span>
+        <div class="grid grid-cols-1 md:grid-cols-7 gap-2.5 pt-1 text-center text-xs font-mono">
+          <div class="p-3.5 rounded-xl bg-purple-500/[0.08] border border-purple-500/25 flex flex-col justify-between transition-all hover:bg-purple-500/[0.12]">
+            <span class="text-[#BF5AF2] font-semibold">Capa 7</span>
+            <span class="text-white font-sans font-medium my-1.5">Aplicación</span>
+            <span class="apple-badge apple-badge-purple justify-center text-[10px]">GATEWAY</span>
           </div>
-          <div class="p-3 rounded-lg bg-purple-950/20 border border-purple-800/40 flex flex-col justify-between">
-            <span class="text-purple-400 font-bold">Capa 6</span>
-            <span class="text-slate-200 font-sans font-medium my-1">Presentación</span>
-            <span class="text-[10px] bg-purple-900/60 text-purple-200 px-1 py-0.5 rounded font-bold">GATEWAY</span>
+          <div class="p-3.5 rounded-xl bg-purple-500/[0.05] border border-purple-500/20 flex flex-col justify-between transition-all hover:bg-purple-500/[0.1]">
+            <span class="text-[#BF5AF2] font-semibold">Capa 6</span>
+            <span class="text-white font-sans font-medium my-1.5">Presentación</span>
+            <span class="apple-badge apple-badge-purple justify-center text-[10px]">GATEWAY</span>
           </div>
-          <div class="p-3 rounded-lg bg-purple-950/20 border border-purple-800/40 flex flex-col justify-between">
-            <span class="text-purple-400 font-bold">Capa 5</span>
-            <span class="text-slate-200 font-sans font-medium my-1">Sesión</span>
-            <span class="text-[10px] bg-purple-900/60 text-purple-200 px-1 py-0.5 rounded font-bold">GATEWAY</span>
+          <div class="p-3.5 rounded-xl bg-purple-500/[0.05] border border-purple-500/20 flex flex-col justify-between transition-all hover:bg-purple-500/[0.1]">
+            <span class="text-[#BF5AF2] font-semibold">Capa 5</span>
+            <span class="text-white font-sans font-medium my-1.5">Sesión</span>
+            <span class="apple-badge apple-badge-purple justify-center text-[10px]">GATEWAY</span>
           </div>
-          <div class="p-3 rounded-lg bg-purple-950/20 border border-purple-800/40 flex flex-col justify-between">
-            <span class="text-purple-400 font-bold">Capa 4</span>
-            <span class="text-slate-200 font-sans font-medium my-1">Transporte</span>
-            <span class="text-[10px] bg-purple-900/60 text-purple-200 px-1 py-0.5 rounded font-bold">GATEWAY</span>
+          <div class="p-3.5 rounded-xl bg-purple-500/[0.05] border border-purple-500/20 flex flex-col justify-between transition-all hover:bg-purple-500/[0.1]">
+            <span class="text-[#BF5AF2] font-semibold">Capa 4</span>
+            <span class="text-white font-sans font-medium my-1.5">Transporte</span>
+            <span class="apple-badge apple-badge-purple justify-center text-[10px]">GATEWAY</span>
           </div>
-          <div class="p-3 rounded-lg bg-blue-950/30 border border-blue-800/50 flex flex-col justify-between">
-            <span class="text-blue-400 font-bold">Capa 3</span>
-            <span class="text-slate-200 font-sans font-medium my-1">Red (IP)</span>
-            <span class="text-[10px] bg-blue-900/60 text-blue-200 px-1 py-0.5 rounded font-bold">ROUTER / GW</span>
+          <div class="p-3.5 rounded-xl bg-blue-500/[0.08] border border-blue-500/25 flex flex-col justify-between transition-all hover:bg-blue-500/[0.12]">
+            <span class="text-[#0A84FF] font-semibold">Capa 3</span>
+            <span class="text-white font-sans font-medium my-1.5">Red (IP)</span>
+            <span class="apple-badge apple-badge-blue justify-center text-[10px]">ROUTER / GW</span>
           </div>
-          <div class="p-3 rounded-lg bg-emerald-950/30 border border-emerald-800/50 flex flex-col justify-between">
-            <span class="text-emerald-400 font-bold">Capa 2</span>
-            <span class="text-slate-200 font-sans font-medium my-1">Enlace (MAC)</span>
-            <span class="text-[10px] bg-emerald-900/60 text-emerald-200 px-1 py-0.5 rounded font-bold">SWITCH / BRIDGE</span>
+          <div class="p-3.5 rounded-xl bg-emerald-500/[0.08] border border-emerald-500/25 flex flex-col justify-between transition-all hover:bg-emerald-500/[0.12]">
+            <span class="text-[#30D158] font-semibold">Capa 2</span>
+            <span class="text-white font-sans font-medium my-1.5">Enlace (MAC)</span>
+            <span class="apple-badge apple-badge-green justify-center text-[10px]">SWITCH</span>
           </div>
-          <div class="p-3 rounded-lg bg-cyan-950/40 border border-cyan-500/60 flex flex-col justify-between shadow-lg shadow-cyan-950">
-            <span class="text-cyan-400 font-bold">Capa 1</span>
-            <span class="text-slate-200 font-sans font-medium my-1">Física (Bits)</span>
-            <span class="text-[10px] bg-cyan-600 text-black px-1 py-0.5 rounded font-bold">HUB / REPETIDOR</span>
+          <div class="p-3.5 rounded-xl bg-cyan-500/[0.12] border border-cyan-400/40 flex flex-col justify-between shadow-[0_4px_16px_rgba(100,210,255,0.15)] transition-all hover:bg-cyan-500/[0.18]">
+            <span class="text-[#64D2FF] font-bold">Capa 1</span>
+            <span class="text-white font-sans font-semibold my-1.5">Física (Bits)</span>
+            <span class="apple-badge apple-badge-blue justify-center text-[10px] font-bold">HUB / REPETIDOR</span>
           </div>
         </div>
       </div>
 
-      <!-- 3 BLOQUES TEÓRICOS -->
+      <!-- 3 BLOQUES TEÓRICOS (Apple Inset Grouped Cards) -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-        <div class="bg-slate-900/80 border border-slate-800 hover:border-cyan-500/40 rounded-xl p-5 space-y-3 transition flex flex-col justify-between">
+        <div class="apple-card-interactive p-5 space-y-4 flex flex-col justify-between">
           <div>
-            <div class="w-8 h-8 rounded-lg bg-cyan-950 border border-cyan-500 flex items-center justify-center text-cyan-400 text-sm font-bold mb-2">01</div>
-            <h3 class="text-base font-bold text-white">2. Concentradores o Hubs</h3>
-            <p class="text-xs text-slate-400 font-mono">Capa 1 · IEEE 802.3 · 10BASE-T</p>
-            <ul class="mt-3 space-y-2 text-xs text-slate-300 leading-relaxed">
-              <li><strong>Definición:</strong> Descrito por Forouzan como un <em>«multiport repeater»</em>. Actúa como punto central de conexión física para varios equipos.</li>
-              <li><strong>Topología Estrella-Bus:</strong> Estrella física en cableado, pero bus lógico compartido donde todos los hosts escuchan todas las tramas.</li>
-              <li><strong>Flooding Ciego:</strong> Recibe bits en un puerto y los replica a todos los demás sin inspeccionar MACs.</li>
-              <li><strong>CSMA/CD & Colisiones:</strong> Opera en half-duplex. Dos transmisiones concurrentes provocan colisiones resueltas con señal JAM (32 bits) y backoff exponencial binario.</li>
-              <li><strong>Vulnerabilidad Sniffing:</strong> Cualquier host en modo promiscuo captura tráfico ajeno confidencial.</li>
+            <div class="flex items-center justify-between mb-3">
+              <span class="apple-badge apple-badge-blue">Capa 1 · Físico</span>
+              <span class="text-xs font-mono text-white/40">IEEE 802.3</span>
+            </div>
+            <h3 class="text-base font-bold text-white tracking-tight">Concentradores (Hubs)</h3>
+            <p class="text-xs text-white/50 font-mono mt-0.5">Topología Estrella-Bus · 10BASE-T</p>
+            <ul class="mt-3.5 space-y-2.5 text-xs text-white/80 leading-relaxed">
+              <li class="flex items-start gap-2"><span class="text-[#64D2FF] shrink-0 mt-0.5">•</span><span><strong>Definición:</strong> Descrito por Forouzan como un <em>«multiport repeater»</em>. Punto central de conexión física.</span></li>
+              <li class="flex items-start gap-2"><span class="text-[#64D2FF] shrink-0 mt-0.5">•</span><span><strong>Topología Estrella-Bus:</strong> Estrella física en cableado, bus lógico compartido donde todos los hosts escuchan todas las tramas.</span></li>
+              <li class="flex items-start gap-2"><span class="text-[#64D2FF] shrink-0 mt-0.5">•</span><span><strong>Flooding Ciego:</strong> Recibe bits en un puerto y los replica a todos los demás sin inspeccionar MACs.</span></li>
+              <li class="flex items-start gap-2"><span class="text-[#64D2FF] shrink-0 mt-0.5">•</span><span><strong>CSMA/CD & Colisiones:</strong> Opera en half-duplex. Señal JAM (32 bits) y backoff exponencial binario.</span></li>
+              <li class="flex items-start gap-2"><span class="text-[#64D2FF] shrink-0 mt-0.5">•</span><span><strong>Vulnerabilidad Sniffing:</strong> Cualquier host en modo promiscuo captura tráfico ajeno confidencial.</span></li>
             </ul>
           </div>
-          <div class="pt-3 border-t border-slate-800/80">
-            <button onclick="document.querySelector('[data-tab=\'tab-hub\']').click()" class="w-full py-1.5 px-3 bg-cyan-950/60 hover:bg-cyan-900 border border-cyan-500/40 rounded text-cyan-300 text-xs font-semibold flex items-center justify-center gap-1.5 transition">
+          <div class="pt-3 border-t border-white/[0.08]">
+            <button onclick="document.querySelector('[data-tab=\'tab-hub\']').click()" class="apple-btn-secondary w-full text-xs">
               <span>Probar Simulador de Hub</span> <span>→</span>
             </button>
           </div>
         </div>
 
-        <div class="bg-slate-900/80 border border-slate-800 hover:border-emerald-500/40 rounded-xl p-5 space-y-3 transition flex flex-col justify-between">
+        <div class="apple-card-interactive p-5 space-y-4 flex flex-col justify-between">
           <div>
-            <div class="w-8 h-8 rounded-lg bg-emerald-950 border border-emerald-500 flex items-center justify-center text-emerald-400 text-sm font-bold mb-2">02</div>
-            <h3 class="text-base font-bold text-white">3. Repetidores</h3>
-            <p class="text-xs text-slate-400 font-mono">Capa 1 · Regeneración de Señal 3R</p>
-            <ul class="mt-3 space-y-2 text-xs text-slate-300 leading-relaxed">
-              <li><strong>Misión Primaria:</strong> Superar la distancia máxima impuesta por la atenuación del medio, restaurando la calidad de la señal.</li>
-              <li><strong>Procesamiento Físico 3R:</strong>
-                <ol class="list-decimal pl-4 space-y-0.5 mt-1 text-[11.5px] text-slate-300">
-                  <li><em>Reamplification:</em> Ganancia de amplitud analógica.</li>
-                  <li><em>Reshaping:</em> Filtrado de componentes de ruido parásito.</li>
-                  <li><em>Reclocking:</em> Regeneración de bordes cuadrados con reloj local PLL para suprimir jitter.</li>
-                </ol>
-              </li>
-              <li><strong>Tipos de Repetidores:</strong> De cobre (PoE/Ethernet), ópticos (fibra monomodo SFP) e inalámbricos (extensores Wi-Fi).</li>
-              <li><strong>Penalización Wi-Fi:</strong> El extensor Wi-Fi en el mismo canal radioeléctrico reduce a la mitad el throughput útil por half-duplex.</li>
-              <li><strong>Diferencia con Hub:</strong> El repetidor une 2 puntos (enlace lineal), mientras que el hub distribuye a múltiples puertos.</li>
+            <div class="flex items-center justify-between mb-3">
+              <span class="apple-badge apple-badge-green">Capa 1 · Regeneración</span>
+              <span class="text-xs font-mono text-white/40">Proceso 3R</span>
+            </div>
+            <h3 class="text-base font-bold text-white tracking-tight">Repetidores</h3>
+            <p class="text-xs text-white/50 font-mono mt-0.5">Restauración de Señal Analógica/Digital</p>
+            <ul class="mt-3.5 space-y-2.5 text-xs text-white/80 leading-relaxed">
+              <li class="flex items-start gap-2"><span class="text-[#30D158] shrink-0 mt-0.5">•</span><span><strong>Misión Primaria:</strong> Superar la distancia máxima impuesta por la atenuación del medio, restaurando la calidad de la señal.</span></li>
+              <li class="flex items-start gap-2"><span class="text-[#30D158] shrink-0 mt-0.5">•</span><span><strong>Procesamiento Físico 3R:</strong>
+                <span class="block mt-1 pl-2 text-[11.5px] text-white/70 space-y-1">
+                  <span>1. <em>Reamplification:</em> Ganancia de amplitud analógica.</span><br>
+                  <span>2. <em>Reshaping:</em> Filtrado de componentes de ruido parásito.</span><br>
+                  <span>3. <em>Reclocking:</em> Regeneración con reloj local PLL para suprimir jitter.</span>
+                </span>
+              </span></li>
+              <li class="flex items-start gap-2"><span class="text-[#30D158] shrink-0 mt-0.5">•</span><span><strong>Tipos:</strong> Cobre (PoE/Ethernet), ópticos (fibra monomodo SFP) e inalámbricos (extensores Wi-Fi).</span></li>
+              <li class="flex items-start gap-2"><span class="text-[#30D158] shrink-0 mt-0.5">•</span><span><strong>Penalización Wi-Fi:</strong> El extensor Wi-Fi en el mismo canal radioeléctrico reduce al 50% el throughput útil por half-duplex.</span></li>
             </ul>
           </div>
-          <div class="pt-3 border-t border-slate-800/80">
-            <button onclick="document.querySelector('[data-tab=\'tab-repeater\']').click()" class="w-full py-1.5 px-3 bg-emerald-950/60 hover:bg-emerald-900 border border-emerald-500/40 rounded text-emerald-300 text-xs font-semibold flex items-center justify-center gap-1.5 transition">
+          <div class="pt-3 border-t border-white/[0.08]">
+            <button onclick="document.querySelector('[data-tab=\'tab-repeater\']').click()" class="apple-btn-secondary w-full text-xs">
               <span>Probar Osciloscopio Digital</span> <span>→</span>
             </button>
           </div>
         </div>
 
-        <div class="bg-slate-900/80 border border-slate-800 hover:border-purple-500/40 rounded-xl p-5 space-y-3 transition flex flex-col justify-between">
+        <div class="apple-card-interactive p-5 space-y-4 flex flex-col justify-between">
           <div>
-            <div class="w-8 h-8 rounded-lg bg-purple-950 border border-purple-500 flex items-center justify-center text-purple-400 text-sm font-bold mb-2">03</div>
-            <h3 class="text-base font-bold text-white">4. Pasarelas o Gateways</h3>
-            <p class="text-xs text-slate-400 font-mono">Capas 3 a 7 · Traducción Heterogénea</p>
-            <ul class="mt-3 space-y-2 text-xs text-slate-300 leading-relaxed">
-              <li><strong>Definición:</strong> Interfaz de hardware/software encargada de traducir y adaptar la comunicación entre redes con arquitecturas o protocolos incompatibles.</li>
-              <li><strong>Operación Multi-Capa:</strong> Desensambla encabezados de origen hasta la Capa de Aplicación, adapta datos y reensambla en la pila de destino.</li>
-              <li><strong>Cómputo Intensivo:</strong> Requiere CPU dedicada, buffers de conversión y recálculo de sumas de verificación (checksums).</li>
-              <li><strong>Tipos:</strong> Red (NAT/Firewall), Correo (SMTP/X.400), Voz (VoIP H.323/SIP a PSTN), Industrial (Modbus RTU a TCP) e IoT (Zigbee a MQTT).</li>
-              <li><strong>Caso SUPTEL:</strong> Vital para convertir llamadas analógicas PSTN a paquetes IP con códec G.711 y señalización H.323.</li>
+            <div class="flex items-center justify-between mb-3">
+              <span class="apple-badge apple-badge-purple">Capas 3 a 7</span>
+              <span class="text-xs font-mono text-white/40">Multi-Protocolo</span>
+            </div>
+            <h3 class="text-base font-bold text-white tracking-tight">Pasarelas (Gateways)</h3>
+            <p class="text-xs text-white/50 font-mono mt-0.5">Traducción Semántica Heterogénea</p>
+            <ul class="mt-3.5 space-y-2.5 text-xs text-white/80 leading-relaxed">
+              <li class="flex items-start gap-2"><span class="text-[#BF5AF2] shrink-0 mt-0.5">•</span><span><strong>Definición:</strong> Interfaz encargada de traducir y adaptar la comunicación entre redes con arquitecturas o protocolos incompatibles.</span></li>
+              <li class="flex items-start gap-2"><span class="text-[#BF5AF2] shrink-0 mt-0.5">•</span><span><strong>Operación Multi-Capa:</strong> Desensambla encabezados hasta Aplicación, adapta datos y reensambla en la pila de destino.</span></li>
+              <li class="flex items-start gap-2"><span class="text-[#BF5AF2] shrink-0 mt-0.5">•</span><span><strong>Cómputo Intensivo:</strong> Requiere CPU dedicada, buffers de conversión y recálculo de sumas de verificación (checksums).</span></li>
+              <li class="flex items-start gap-2"><span class="text-[#BF5AF2] shrink-0 mt-0.5">•</span><span><strong>Tipos:</strong> Red (NAT/Firewall), Voz (VoIP H.323 a PSTN), Industrial (Modbus RTU a TCP) e IoT (MQTT/TLS).</span></li>
             </ul>
           </div>
-          <div class="pt-3 border-t border-slate-800/80">
-            <button onclick="document.querySelector('[data-tab=\'tab-gateway\']').click()" class="w-full py-1.5 px-3 bg-purple-950/60 hover:bg-purple-900 border border-purple-500/40 rounded text-purple-300 text-xs font-semibold flex items-center justify-center gap-1.5 transition">
+          <div class="pt-3 border-t border-white/[0.08]">
+            <button onclick="document.querySelector('[data-tab=\'tab-gateway\']').click()" class="apple-btn-secondary w-full text-xs">
               <span>Probar Traductor de Protocolos</span> <span>→</span>
             </button>
           </div>
         </div>
       </div>
 
-      <!-- TABLA 1 COMPARATIVA -->
-      <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 sm:p-6 space-y-4">
-        <div class="flex items-center justify-between flex-wrap gap-2 border-b border-slate-800 pb-3">
+      <!-- TABLA 1 COMPARATIVA (Apple System Table) -->
+      <div class="apple-card overflow-hidden p-5 sm:p-6 space-y-4">
+        <div class="flex items-center justify-between flex-wrap gap-2 border-b border-white/[0.08] pb-3.5">
           <div>
-            <h3 class="text-base font-bold text-white flex items-center gap-2">
-               Tabla 1. Comparación Técnica Estructurada (UPTC / Forouzan)
+            <h3 class="text-base font-semibold text-white tracking-tight flex items-center gap-2">
+              Tabla 1. Comparación Técnica Estructurada (UPTC / Forouzan)
             </h3>
-            <p class="text-xs text-slate-400">Contraste exhaustivo de criterios funcionales, capas OSI y limitaciones</p>
+            <p class="text-xs text-white/60">Contraste exhaustivo de criterios funcionales, capas OSI y limitaciones</p>
           </div>
-          <span class="text-xs font-mono text-emerald-400 bg-emerald-950/40 px-2.5 py-1 rounded border border-emerald-800">Tabla Oficial del Documento</span>
+          <span class="apple-badge apple-badge-green font-mono">Tabla Oficial del Documento</span>
         </div>
 
-        <div class="overflow-x-auto">
+        <div class="overflow-x-auto rounded-xl border border-white/[0.08]">
           <table class="w-full text-left border-collapse">
             <thead>
-              <tr class="border-b border-slate-700 bg-slate-800/60 text-xs font-mono text-slate-300">
-                <th class="py-2.5 px-4">Criterio</th>
-                <th class="py-2.5 px-4 text-cyan-400">Hub / Concentrador</th>
-                <th class="py-2.5 px-4 text-emerald-400">Repetidor</th>
-                <th class="py-2.5 px-4 text-purple-400">Gateway / Pasarela</th>
+              <tr class="border-b border-white/[0.08] bg-white/[0.04] text-xs font-mono text-white/70">
+                <th class="py-3 px-4 font-semibold">Criterio</th>
+                <th class="py-3 px-4 font-semibold text-[#64D2FF]">Hub / Concentrador</th>
+                <th class="py-3 px-4 font-semibold text-[#30D158]">Repetidor</th>
+                <th class="py-3 px-4 font-semibold text-[#BF5AF2]">Gateway / Pasarela</th>
               </tr>
             </thead>
-            <tbody id="comparisonTableBody" class="divide-y divide-slate-800"></tbody>
+            <tbody id="comparisonTableBody" class="divide-y divide-white/[0.06]"></tbody>
           </table>
         </div>
       </div>
 
-      <!-- CASO DE ESTUDIO SUPTEL -->
-      <div class="bg-gradient-to-r from-slate-900 to-indigo-950/50 border border-indigo-500/30 rounded-xl p-5 sm:p-6 space-y-4">
-        <div class="flex items-center justify-between flex-wrap gap-2 border-b border-slate-800 pb-3">
+      <!-- CASO DE ESTUDIO SUPTEL (Apple Editorial Panel) -->
+      <div class="apple-card p-5 sm:p-6 space-y-4 bg-gradient-to-br from-[#1C1C22] to-[#121216] border border-white/[0.12]">
+        <div class="flex items-center justify-between flex-wrap gap-2 border-b border-white/[0.08] pb-3.5">
           <div>
-            <span class="text-xs font-mono uppercase tracking-wider text-indigo-400 font-bold">Capítulo 4.8 · Caso de Estudio Real</span>
-            <h3 class="text-base font-bold text-white mt-0.5">
+            <span class="apple-badge apple-badge-purple text-[10px] font-mono uppercase tracking-wider">Capítulo 4.8 · Caso de Estudio Real</span>
+            <h3 class="text-base font-bold text-white tracking-tight mt-1">
               Superintendencia de Telecomunicaciones del Ecuador (SUPTEL)
             </h3>
           </div>
-          <span class="text-xs font-mono text-indigo-300 bg-indigo-950 px-2.5 py-1 rounded border border-indigo-800">Integración CTI / VoIP H.323</span>
+          <span class="apple-badge apple-badge-blue font-mono">Integración CTI / VoIP H.323</span>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 text-xs leading-relaxed text-slate-300">
-          <div class="space-y-2 bg-slate-900/60 p-4 rounded-lg border border-slate-800">
-            <h4 class="font-bold text-rose-400 flex items-center gap-1.5"> Problemática Institucional:</h4>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs leading-relaxed text-white/80">
+          <div class="space-y-2 bg-white/[0.03] p-4 rounded-2xl border border-white/[0.06]">
+            <h4 class="font-semibold text-[#FF453A] flex items-center gap-1.5">Problemática Institucional:</h4>
             <p>La SUPTEL recibía un promedio de <strong>398 solicitudes de información y reclamos diarios</strong> a nivel nacional. De ellos, el <strong>56% se gestionaba telefónicamente de forma manual</strong> y el <strong>27% presencial</strong>, saturando las dependencias administrativas.</p>
           </div>
-          <div class="space-y-2 bg-slate-900/60 p-4 rounded-lg border border-slate-800">
-            <h4 class="font-bold text-emerald-400 flex items-center gap-1.5"> Solución Mediante Gateway H.323:</h4>
+          <div class="space-y-2 bg-white/[0.03] p-4 rounded-2xl border border-white/[0.06]">
+            <h4 class="font-semibold text-[#30D158] flex items-center gap-1.5">Solución Mediante Gateway H.323:</h4>
             <p>Se integró un sistema Call Center con <strong>CTI y ACD</strong>. El <strong>Gateway H.323</strong> convirtió el tráfico telefónico analógico PSTN en paquetes IP con códec G.711 (64 kbps) y señalización H.225/Q.931, permitiendo la atención centralizada desde PCs con diademas USB.</p>
           </div>
         </div>
       </div>
 
       <!-- CRITERIOS CONSULTORÍA CAP 7 -->
-      <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-5 sm:p-6 space-y-4">
-        <div class="border-b border-slate-800 pb-3">
-          <span class="text-xs font-mono uppercase tracking-wider text-cyan-400 font-bold">Capítulo 7 · Criterios de Selección del Consultor</span>
-          <h3 class="text-base font-bold text-white mt-0.5">Parámetros Técnicos: Capacidad, Cobertura y Procesamiento</h3>
+      <div class="apple-card p-5 sm:p-6 space-y-4">
+        <div class="border-b border-white/[0.08] pb-3.5">
+          <span class="apple-badge apple-badge-blue text-[10px] font-mono uppercase tracking-wider">Capítulo 7 · Criterios de Selección del Consultor</span>
+          <h3 class="text-base font-bold text-white tracking-tight mt-1">Parámetros Técnicos: Capacidad, Cobertura y Procesamiento</h3>
         </div>
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs text-slate-300">
-          <div class="p-4 rounded-lg bg-slate-950 border border-cyan-500/20 space-y-2">
-            <div class="font-bold text-cyan-400 font-mono">1. CAPACIDAD</div>
-            <p class="leading-relaxed">Densidad y velocidad de puertos (10/100/1000/10G), Forwarding rate (pps), buffers y soporte PoE/PoE+. En gateways: sesiones y llamadas concurrentes.</p>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs text-white/80">
+          <div class="apple-metric-card space-y-2">
+            <div class="font-semibold text-[#64D2FF] font-mono text-xs tracking-wider uppercase">1. Capacidad</div>
+            <p class="leading-relaxed text-white/70">Densidad y velocidad de puertos (10/100/1000/10G), Forwarding rate (pps), buffers y soporte PoE/PoE+. En gateways: sesiones y llamadas concurrentes.</p>
           </div>
-          <div class="p-4 rounded-lg bg-slate-950 border border-emerald-500/20 space-y-2">
-            <div class="font-bold text-emerald-400 font-mono">2. COBERTURA</div>
-            <p class="leading-relaxed">Alcance geográfico (cobre 100m, fibra monomodo km, Wi-Fi). Diseño por Cobertura vs Capacidad (WLANPro). En gateways: número de redes y sucursales.</p>
+          <div class="apple-metric-card space-y-2">
+            <div class="font-semibold text-[#30D158] font-mono text-xs tracking-wider uppercase">2. Cobertura</div>
+            <p class="leading-relaxed text-white/70">Alcance geográfico (cobre 100m, fibra monomodo km, Wi-Fi). Diseño por Cobertura vs Capacidad (WLANPro). En gateways: número de redes y sucursales.</p>
           </div>
-          <div class="p-4 rounded-lg bg-slate-950 border border-purple-500/20 space-y-2">
-            <div class="font-bold text-purple-400 font-mono">3. PROCESAMIENTO</div>
-            <p class="leading-relaxed">Nivel OSI de inspección. Hub/Repetidor operan en Capa 1 pura. Gateway requiere procesador para desensamblado, conversión semántica y filtrado de seguridad.</p>
+          <div class="apple-metric-card space-y-2">
+            <div class="font-semibold text-[#BF5AF2] font-mono text-xs tracking-wider uppercase">3. Procesamiento</div>
+            <p class="leading-relaxed text-white/70">Nivel OSI de inspección. Hub/Repetidor operan en Capa 1 pura. Gateway requiere procesador para desensamblado, conversión semántica y filtrado de seguridad.</p>
           </div>
         </div>
       </div>
@@ -288,43 +304,45 @@
 
     <!-- ================= TAB 2: SIMULADOR DE HUB ================= -->
     <section id="tab-hub" class="tab-pane hidden space-y-6">
-      <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4 bg-slate-900/80 border border-slate-800 p-4 sm:p-5 rounded-xl">
+      <div class="apple-card p-4 sm:p-5 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
         <div>
-          <span class="text-xs font-mono uppercase tracking-wider text-cyan-400 font-bold">Laboratorio Interactivo 1</span>
-          <h2 id="hubModeTitle" class="text-lg sm:text-xl font-bold text-white mt-0.5">
+          <span class="apple-badge apple-badge-blue text-[10px] uppercase font-mono tracking-wider">Laboratorio Interactivo 1</span>
+          <h2 id="hubModeTitle" class="text-lg sm:text-xl font-bold text-white tracking-tight mt-1">
             MODO CONCENTRADOR / HUB (Capa 1 - Repetidor Multipuerto)
           </h2>
-          <p class="text-xs text-slate-400 mt-1">
+          <p class="text-xs text-white/60 mt-1">
             Visualiza la propagación indiscriminada (flooding), interferencia en medio compartido y el algoritmo CSMA/CD.
           </p>
         </div>
         <div class="flex items-center gap-3">
-          <label class="flex items-center gap-2 cursor-pointer bg-slate-800/80 px-3 py-1.5 rounded-lg border border-slate-700 text-xs font-mono text-slate-300 hover:border-emerald-500 transition">
-            <input type="checkbox" id="chkSwitchMode" class="rounded accent-emerald-500">
+          <label class="apple-card px-3 py-1.5 rounded-full inline-flex items-center gap-2 cursor-pointer hover:border-white/20 transition text-xs font-mono text-white/80">
+            <input type="checkbox" id="chkSwitchMode" class="rounded accent-[#30D158]">
             <span>Modo Comparativo: Switch L2</span>
           </label>
-          <div id="hubStateBadge" class="px-2.5 py-1 rounded text-xs font-mono font-bold uppercase bg-slate-800 text-slate-300 border border-slate-700">
+          <div id="hubStateBadge" class="apple-badge apple-badge-gray font-mono font-bold uppercase">
             IDLE
           </div>
         </div>
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
-        <div class="lg:col-span-8 bg-slate-950 border border-slate-800 rounded-xl p-4 flex flex-col items-center justify-center relative overflow-hidden shadow-2xl">
-          <canvas id="hubCanvas" width="600" height="420" class="max-w-full h-auto bg-slate-950 rounded-lg"></canvas>
-          <div class="w-full flex items-center justify-between text-[11px] font-mono text-slate-500 mt-2 px-2">
+        <!-- Apple Display Enclosure for Hub Canvas -->
+        <div class="lg:col-span-8 apple-display-enclosure p-4 flex flex-col items-center justify-center relative overflow-hidden shadow-2xl">
+          <canvas id="hubCanvas" width="600" height="420" class="max-w-full h-auto bg-[#070709] rounded-xl border border-white/[0.06]"></canvas>
+          <div class="w-full flex items-center justify-between text-[11px] font-mono text-white/40 mt-3 px-2">
             <span>Topología: Estrella Física / Bus Lógico Compartido</span>
             <span>Estándar: IEEE 802.3 10BASE-T (Manchester)</span>
           </div>
         </div>
 
         <div class="lg:col-span-4 space-y-4">
-          <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-4 space-y-3">
-            <h3 class="text-xs font-mono font-bold text-slate-200 uppercase tracking-wider">Inyección de Tráfico</h3>
-            <div class="grid grid-cols-2 gap-2 text-xs">
+          <!-- Control de Tráfico -->
+          <div class="apple-card p-4 sm:p-5 space-y-3.5">
+            <h3 class="text-xs font-mono font-semibold text-white/90 uppercase tracking-wider">Inyección de Tráfico</h3>
+            <div class="grid grid-cols-2 gap-2.5 text-xs">
               <div>
-                <label class="text-slate-400 block mb-1">Origen:</label>
-                <select id="hubSource" class="w-full bg-slate-950 border border-slate-700 rounded px-2.5 py-1.5 text-slate-200">
+                <label class="text-white/60 block mb-1 text-[11px]">Origen:</label>
+                <select id="hubSource" class="apple-select w-full">
                   <option value="A" selected>Host A (192.168.1.10)</option>
                   <option value="B">Host B (192.168.1.20)</option>
                   <option value="C">Host C (192.168.1.30)</option>
@@ -332,8 +350,8 @@
                 </select>
               </div>
               <div>
-                <label class="text-slate-400 block mb-1">Destino:</label>
-                <select id="hubDest" class="w-full bg-slate-950 border border-slate-700 rounded px-2.5 py-1.5 text-slate-200">
+                <label class="text-white/60 block mb-1 text-[11px]">Destino:</label>
+                <select id="hubDest" class="apple-select w-full">
                   <option value="B" selected>Host B (192.168.1.20)</option>
                   <option value="A">Host A (192.168.1.10)</option>
                   <option value="C">Host C (192.168.1.30)</option>
@@ -342,58 +360,60 @@
               </div>
             </div>
             <div class="space-y-2 pt-1">
-              <button id="btnHubSend" class="w-full py-2 px-3 bg-cyan-600 hover:bg-cyan-500 text-white text-xs font-bold rounded shadow-lg shadow-cyan-600/30 transition">
+              <button id="btnHubSend" class="apple-btn-primary w-full text-xs">
                 Transmitir Trama Unicast
               </button>
-              <button id="btnHubCollision" class="w-full py-2 px-3 bg-rose-600 hover:bg-rose-500 text-white text-xs font-bold rounded shadow-lg shadow-rose-600/30 transition">
+              <button id="btnHubCollision" class="apple-btn-destructive w-full text-xs">
                 Provocar Colisión Simultánea (A y C)
               </button>
             </div>
-            <div class="pt-2 border-t border-slate-800 space-y-2">
-              <label class="flex items-center gap-2 cursor-pointer text-xs text-purple-300">
-                <input type="checkbox" id="chkHubSniffer" class="rounded accent-purple-500">
-                <span>Activar Modo Promiscuo (Sniffer) en Host C</span>
+            <div class="pt-2 border-t border-white/[0.08] space-y-2.5">
+              <label class="flex items-center gap-2 cursor-pointer text-xs text-[#BF5AF2]">
+                <input type="checkbox" id="chkHubSniffer" class="rounded accent-[#BF5AF2]">
+                <span class="font-medium">Activar Modo Promiscuo (Sniffer) en Host C</span>
               </label>
-              <div class="flex items-center justify-between text-xs text-slate-400">
+              <div class="flex items-center justify-between text-xs text-white/60">
                 <span>Velocidad:</span>
-                <select id="hubSpeed" class="bg-slate-950 border border-slate-700 rounded px-2 py-0.5 text-xs text-slate-200">
+                <select id="hubSpeed" class="apple-select text-xs py-1">
                   <option value="0.5">0.5x</option>
                   <option value="1.0" selected>1.0x</option>
                   <option value="2.0">2.0x</option>
                 </select>
-                <button id="btnHubReset" class="text-xs text-slate-400 hover:text-white underline">Reiniciar</button>
+                <button id="btnHubReset" class="text-xs text-white/60 hover:text-white transition underline">Reiniciar</button>
               </div>
             </div>
           </div>
 
-          <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-4 space-y-2">
-            <h3 class="text-xs font-mono font-bold text-slate-200 uppercase tracking-wider">Métricas del Medio</h3>
+          <!-- Métricas del Medio (Apple Metric Cards) -->
+          <div class="apple-card p-4 space-y-2.5">
+            <h3 class="text-xs font-mono font-semibold text-white/90 uppercase tracking-wider">Métricas del Medio</h3>
             <div class="grid grid-cols-2 gap-2 text-xs font-mono">
-              <div class="bg-slate-950 p-2 rounded border border-slate-800">
-                <span class="text-slate-500 text-[10px] block">Tramas Emitidas:</span>
-                <span id="statHubSent" class="text-base font-bold text-cyan-400">0</span>
+              <div class="apple-metric-card">
+                <span class="text-white/50 text-[10px] block">Tramas Emitidas</span>
+                <span id="statHubSent" class="text-lg font-bold text-[#64D2FF]">0</span>
               </div>
-              <div class="bg-slate-950 p-2 rounded border border-slate-800">
-                <span class="text-slate-500 text-[10px] block">Colisiones CSMA/CD:</span>
-                <span id="statHubCollisions" class="text-base font-bold text-rose-400">0</span>
+              <div class="apple-metric-card">
+                <span class="text-white/50 text-[10px] block">Colisiones CSMA/CD</span>
+                <span id="statHubCollisions" class="text-lg font-bold text-[#FF453A]">0</span>
               </div>
-              <div class="bg-slate-950 p-2 rounded border border-slate-800">
-                <span class="text-slate-500 text-[10px] block">Tramas Entregadas:</span>
-                <span id="statHubDelivered" class="text-base font-bold text-emerald-400">0</span>
+              <div class="apple-metric-card">
+                <span class="text-white/50 text-[10px] block">Tramas Entregadas</span>
+                <span id="statHubDelivered" class="text-lg font-bold text-[#30D158]">0</span>
               </div>
-              <div class="bg-slate-950 p-2 rounded border border-slate-800">
-                <span class="text-slate-500 text-[10px] block">Sniffed (Espiadas):</span>
-                <span id="statHubSniffed" class="text-base font-bold text-purple-400">0</span>
+              <div class="apple-metric-card">
+                <span class="text-white/50 text-[10px] block">Sniffed (Espiadas)</span>
+                <span id="statHubSniffed" class="text-lg font-bold text-[#BF5AF2]">0</span>
               </div>
             </div>
           </div>
 
-          <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-3 space-y-2">
-            <div class="flex items-center justify-between text-xs font-mono text-slate-400 border-b border-slate-800 pb-1">
+          <!-- Registro de Eventos -->
+          <div class="apple-card p-3.5 space-y-2">
+            <div class="flex items-center justify-between text-xs font-mono text-white/50 border-b border-white/[0.08] pb-1.5">
               <span>Registro de Eventos</span>
-              <span class="text-[10px] text-cyan-400">LIVE</span>
+              <span class="apple-badge apple-badge-blue text-[9px] py-0 px-1.5">LIVE</span>
             </div>
-            <div id="hubLogBox" class="h-32 overflow-y-auto pr-1 space-y-1 text-slate-300"></div>
+            <div id="hubLogBox" class="h-32 overflow-y-auto pr-1 space-y-1 text-white/80 font-mono text-xs"></div>
           </div>
         </div>
       </div>
@@ -401,37 +421,39 @@
 
     <!-- ================= TAB 3: SIMULADOR DE REPETIDOR ================= -->
     <section id="tab-repeater" class="tab-pane hidden space-y-6">
-      <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4 bg-slate-900/80 border border-slate-800 p-4 sm:p-5 rounded-xl">
+      <div class="apple-card p-4 sm:p-5 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
         <div>
-          <span class="text-xs font-mono uppercase tracking-wider text-emerald-400 font-bold">Laboratorio Interactivo 2</span>
-          <h2 class="text-lg sm:text-xl font-bold text-white mt-0.5">
+          <span class="apple-badge apple-badge-green text-[10px] uppercase font-mono tracking-wider">Laboratorio Interactivo 2</span>
+          <h2 class="text-lg sm:text-xl font-bold text-white tracking-tight mt-1">
             REPETIDOR & REGENERACIÓN DE SEÑAL FÍSICA (PROCESO 3R)
           </h2>
-          <p class="text-xs text-slate-400 mt-1">
+          <p class="text-xs text-white/60 mt-1">
             Osciloscopio digital: atenuación en dB, ruido térmico/EMI, y etapas de Reamplificación, Filtrado y Reclocking.
           </p>
         </div>
-        <div id="repStatusBadge" class="px-3 py-1 bg-emerald-950/80 border border-emerald-500/60 text-emerald-300 text-xs font-semibold rounded-full">
+        <div id="repStatusBadge" class="apple-badge apple-badge-green">
           REPETIDOR ACTIVO (3R)
         </div>
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
-        <div class="lg:col-span-8 bg-slate-950 border border-slate-800 rounded-xl p-4 flex flex-col items-center justify-center relative overflow-hidden shadow-2xl">
-          <canvas id="repeaterCanvas" width="600" height="390" class="max-w-full h-auto bg-slate-950 rounded-lg"></canvas>
-          <div class="w-full flex items-center justify-between text-[11px] font-mono text-slate-500 mt-3 px-2">
+        <!-- Apple Display Enclosure for Repeater Canvas -->
+        <div class="lg:col-span-8 apple-display-enclosure p-4 flex flex-col items-center justify-center relative overflow-hidden shadow-2xl">
+          <canvas id="repeaterCanvas" width="600" height="390" class="max-w-full h-auto bg-[#070709] rounded-xl border border-white/[0.06]"></canvas>
+          <div class="w-full flex items-center justify-between text-[11px] font-mono text-white/40 mt-3 px-2">
             <span>Escala: 50 ns / div · 1 V / div</span>
             <span>Muestreo: PLL de Recronometrado Activo</span>
           </div>
         </div>
 
         <div class="lg:col-span-4 space-y-4">
-          <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-4 space-y-3">
-            <h3 class="text-xs font-mono font-bold text-slate-200 uppercase tracking-wider">Parámetros del Canal</h3>
+          <!-- Parámetros del Canal -->
+          <div class="apple-card p-4 sm:p-5 space-y-3.5">
+            <h3 class="text-xs font-mono font-semibold text-white/90 uppercase tracking-wider">Parámetros del Canal</h3>
             <div class="space-y-3 text-xs">
               <div>
-                <label class="text-slate-400 block mb-1">Medio Físico:</label>
-                <select id="repMedium" class="w-full bg-slate-950 border border-slate-700 rounded px-2.5 py-1.5 text-slate-200">
+                <label class="text-white/60 block mb-1 text-[11px]">Medio Físico:</label>
+                <select id="repMedium" class="apple-select w-full">
                   <option value="cobre" selected>Cable de Cobre UTP Cat6 (Límite: 100m)</option>
                   <option value="coaxial">Cable Coaxial 10BASE2 (Límite: 185m)</option>
                   <option value="fibra">Fibra Óptica Monomodo (Límite: >2000m)</option>
@@ -439,63 +461,64 @@
                 </select>
               </div>
               <div>
-                <div class="flex justify-between text-slate-400 mb-1">
+                <div class="flex justify-between text-white/70 mb-1.5">
                   <span>Distancia Total:</span>
-                  <span id="repDistanceVal" class="font-mono text-cyan-400 font-bold">180 m</span>
+                  <span id="repDistanceVal" class="apple-badge apple-badge-blue text-[11px]">180 m</span>
                 </div>
-                <input type="range" id="repDistance" min="10" max="400" value="180" step="5" class="w-full accent-cyan-500 cursor-pointer">
+                <input type="range" id="repDistance" min="10" max="400" value="180" step="5" class="w-full">
               </div>
               <div>
-                <div class="flex justify-between text-slate-400 mb-1">
+                <div class="flex justify-between text-white/70 mb-1.5">
                   <span>Ruido / EMI:</span>
-                  <span id="repNoiseVal" class="font-mono text-amber-400 font-bold">25%</span>
+                  <span id="repNoiseVal" class="apple-badge apple-badge-amber text-[11px]">25%</span>
                 </div>
-                <input type="range" id="repNoise" min="0" max="100" value="25" step="5" class="w-full accent-amber-500 cursor-pointer">
+                <input type="range" id="repNoise" min="0" max="100" value="25" step="5" class="w-full">
               </div>
-              <div class="pt-2 border-t border-slate-800 space-y-2">
-                <label class="flex items-center gap-2 cursor-pointer text-xs font-semibold text-emerald-300">
-                  <input type="checkbox" id="chkEnableRepeater" checked class="rounded accent-emerald-500">
+              <div class="pt-2.5 border-t border-white/[0.08] space-y-2">
+                <label class="flex items-center gap-2 cursor-pointer text-xs font-medium text-[#30D158]">
+                  <input type="checkbox" id="chkEnableRepeater" checked class="rounded accent-[#30D158]">
                   <span>Intercalar Repetidor 3R en el trayecto</span>
                 </label>
-                <label class="flex items-center gap-2 cursor-pointer text-xs text-amber-300">
-                  <input type="checkbox" id="chkWifiMode" class="rounded accent-amber-500">
+                <label class="flex items-center gap-2 cursor-pointer text-xs font-medium text-[#FF9F0A]">
+                  <input type="checkbox" id="chkWifiMode" class="rounded accent-[#FF9F0A]">
                   <span>Modo Extensor Wi-Fi (Half-Duplex)</span>
                 </label>
               </div>
             </div>
           </div>
 
-          <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-4 space-y-2">
-            <h3 class="text-xs font-mono font-bold text-slate-200 uppercase tracking-wider">Calidad de Señal</h3>
+          <!-- Calidad de Señal -->
+          <div class="apple-card p-4 space-y-2.5">
+            <h3 class="text-xs font-mono font-semibold text-white/90 uppercase tracking-wider">Calidad de Señal</h3>
             <div class="grid grid-cols-2 gap-2 text-xs font-mono">
-              <div class="bg-slate-950 p-2 rounded border border-slate-800">
-                <span class="text-slate-500 text-[10px] block">Atenuación:</span>
-                <span id="metricAttDb" class="text-base font-bold text-amber-400">0 dB</span>
+              <div class="apple-metric-card">
+                <span class="text-white/50 text-[10px] block">Atenuación</span>
+                <span id="metricAttDb" class="text-base font-bold text-[#FF9F0A]">0 dB</span>
               </div>
-              <div class="bg-slate-950 p-2 rounded border border-slate-800">
-                <span class="text-slate-500 text-[10px] block">Relación SNR:</span>
-                <span id="metricSnr" class="text-base font-bold text-cyan-400">0 dB</span>
+              <div class="apple-metric-card">
+                <span class="text-white/50 text-[10px] block">Relación SNR</span>
+                <span id="metricSnr" class="text-base font-bold text-[#64D2FF]">0 dB</span>
               </div>
-              <div class="bg-slate-950 p-2 rounded border border-slate-800">
-                <span class="text-slate-500 text-[10px] block">Tasa de Error (BER):</span>
-                <span id="metricBer" class="text-xs font-bold text-emerald-400">&lt; 10⁻¹²</span>
+              <div class="apple-metric-card">
+                <span class="text-white/50 text-[10px] block">Tasa de Error (BER)</span>
+                <span id="metricBer" class="text-xs font-bold text-[#30D158]">&lt; 10⁻¹²</span>
               </div>
-              <div class="bg-slate-950 p-2 rounded border border-slate-800">
-                <span class="text-slate-500 text-[10px] block">Throughput:</span>
-                <span id="metricThroughput" class="text-base font-bold text-emerald-400">100 Mbps</span>
+              <div class="apple-metric-card">
+                <span class="text-white/50 text-[10px] block">Throughput</span>
+                <span id="metricThroughput" class="text-base font-bold text-[#30D158]">100 Mbps</span>
               </div>
-              <div class="bg-slate-950 p-2 rounded border border-slate-800 col-span-2">
-                <span class="text-slate-500 text-[10px] block">Jitter / Dispersión:</span>
-                <span id="metricJitter" class="text-xs font-mono font-bold text-cyan-300">< 1.2 ns (Restablecido)</span>
+              <div class="apple-metric-card col-span-2">
+                <span class="text-white/50 text-[10px] block">Jitter / Dispersión</span>
+                <span id="metricJitter" class="text-xs font-mono font-bold text-[#64D2FF]">&lt; 1.2 ns (Restablecido)</span>
               </div>
             </div>
           </div>
 
-          <div id="wifiPenaltyPanel" class="hidden bg-amber-950/40 border border-amber-500/40 rounded-xl p-3 text-xs text-amber-200 leading-relaxed space-y-1">
-            <div class="font-bold flex items-center gap-1.5 text-amber-400">
+          <div id="wifiPenaltyPanel" class="hidden apple-card p-4 border border-[#FF9F0A]/40 bg-[#FF9F0A]/10 text-amber-200 leading-relaxed space-y-1 rounded-2xl">
+            <div class="font-bold flex items-center gap-1.5 text-[#FF9F0A]">
               <span>Alerta: Cuello de Botella en Extensor Wi-Fi:</span>
             </div>
-            <p>
+            <p class="text-xs text-white/80">
               El repetidor inalámbrico opera en el mismo canal radioeléctrico en <strong>half-duplex</strong>: 50% recibiendo y 50% retransmitiendo. <strong>El ancho de banda efectivo queda reducido a la mitad (~50 Mbps).</strong>
             </p>
           </div>
@@ -506,17 +529,17 @@
     <!-- ================= TAB 4: SIMULADOR DE GATEWAY ================= -->
     <section id="tab-gateway" class="tab-pane hidden space-y-6">
       <!-- Encabezado y Selectores de Escenario / Falla -->
-      <div class="flex flex-col xl:flex-row items-start xl:items-center justify-between gap-4 bg-slate-900/80 border border-slate-800 p-4 sm:p-5 rounded-xl">
+      <div class="apple-card p-4 sm:p-5 flex flex-col xl:flex-row items-start xl:items-center justify-between gap-4">
         <div>
           <div class="flex items-center gap-2">
-            <span class="text-xs font-mono uppercase tracking-wider text-purple-400 font-bold">Laboratorio Interactivo 3</span>
-            <span class="text-slate-600">|</span>
-            <span id="gwScenarioBadge" class="text-xs font-mono text-cyan-400 font-semibold">Red IP Corporativa</span>
+            <span class="apple-badge apple-badge-purple text-[10px] uppercase font-mono tracking-wider">Laboratorio Interactivo 3</span>
+            <span class="text-white/20">|</span>
+            <span id="gwScenarioBadge" class="apple-badge apple-badge-blue text-xs font-mono">Red IP Corporativa</span>
           </div>
-          <h2 class="text-lg sm:text-xl font-bold text-white mt-0.5">
+          <h2 class="text-lg sm:text-xl font-bold text-white tracking-tight mt-1">
             PASARELA / GATEWAY & DINÁMICA REAL DE REDES DE DATOS
           </h2>
-          <p id="gwScenarioDesc" class="text-xs text-slate-400 mt-1 max-w-3xl">
+          <p id="gwScenarioDesc" class="text-xs text-white/60 mt-1 max-w-3xl">
             Simulación realista del recorrido de tramas y paquetes entre dispositivos reales (Portátil, Celular, Switch, Router, Gateway, Servidor, PLC e IoT) con resolución ARP, DHCP, DNS, NAT y traducción de protocolos.
           </p>
         </div>
@@ -524,8 +547,8 @@
         <div class="flex flex-wrap items-center gap-3 w-full xl:w-auto">
           <!-- Selector de Escenario -->
           <div class="flex flex-col gap-1">
-            <label class="text-[10px] text-slate-400 font-mono uppercase font-bold">Topología / Escenario Real:</label>
-            <select id="gwScenarioSelect" class="bg-slate-950 border border-purple-500/50 rounded-lg px-3 py-1.5 text-xs text-purple-200 font-semibold focus:outline-none focus:border-purple-400">
+            <label class="text-[10px] text-white/50 font-mono uppercase font-semibold">Topología / Escenario Real:</label>
+            <select id="gwScenarioSelect" class="apple-select text-xs text-[#BF5AF2] font-semibold">
               <option value="laptop_wifi" selected>1. Portátil Wi-Fi &rarr; AP &rarr; Switch &rarr; Router (NAT) &rarr; Web Server (18 Pasos)</option>
               <option value="smartphone_wifi">2. Teléfono Móvil &rarr; Wi-Fi &rarr; Router Residencial &rarr; Web Server</option>
               <option value="laptop_to_plc">3. Portátil &rarr; Router L3 &rarr; Gateway Industrial &rarr; Bus Serial &rarr; PLC</option>
@@ -536,8 +559,8 @@
 
           <!-- Selector de Inyección de Fallas -->
           <div class="flex flex-col gap-1">
-            <label class="text-[10px] text-red-400 font-mono uppercase font-bold">Inyección de Fallas de Red:</label>
-            <select id="gwErrorSelect" class="bg-slate-950 border border-red-500/50 rounded-lg px-3 py-1.5 text-xs text-red-200 font-semibold focus:outline-none focus:border-red-400">
+            <label class="text-[10px] text-[#FF453A] font-mono uppercase font-semibold">Inyección de Fallas de Red:</label>
+            <select id="gwErrorSelect" class="apple-select text-xs text-[#FF453A] font-semibold">
               <option value="none" selected>[OK] Operación Normal (Sin Fallas)</option>
               <option value="err_gw_down">[FALLA 1] Gateway Predeterminado Caído / Sin Respuesta</option>
               <option value="err_cable">[FALLA 2] Cable Ethernet Desconectado (Falla Capa 1)</option>
@@ -552,8 +575,8 @@
 
           <!-- Selector de Velocidad -->
           <div class="flex flex-col gap-1">
-            <label class="text-[10px] text-slate-400 font-mono uppercase font-bold">Velocidad:</label>
-            <select id="gwSpeedSelect" class="bg-slate-950 border border-slate-700 rounded-lg px-2 py-1.5 text-xs text-slate-300 font-mono">
+            <label class="text-[10px] text-white/50 font-mono uppercase font-semibold">Velocidad:</label>
+            <select id="gwSpeedSelect" class="apple-select text-xs font-mono">
               <option value="0.5">0.5x</option>
               <option value="1.0" selected>1.0x</option>
               <option value="2.0">2.0x</option>
@@ -562,67 +585,67 @@
         </div>
       </div>
 
-      <!-- Lienzo Principal de Topología Interactiva -->
-      <div class="bg-slate-950 border border-slate-800 rounded-xl p-5 space-y-4 shadow-2xl">
-        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 border-b border-slate-800 pb-3">
+      <!-- Lienzo Principal de Topología Interactiva (Apple Display Enclosure) -->
+      <div class="apple-display-enclosure p-5 space-y-4 shadow-2xl">
+        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 border-b border-white/[0.08] pb-3">
           <div>
-            <h3 class="text-xs sm:text-sm font-bold text-white font-mono flex items-center gap-2">
-              <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+            <h3 class="text-xs sm:text-sm font-semibold text-white font-mono flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-[#64D2FF] animate-ping"></span>
               TOPOLOGÍA DINÁMICA DE DISPOSITIVOS Y TRÁFICO DE RED
             </h3>
-            <p class="text-[11px] text-slate-400">
-              Haz clic sobre cualquier equipo para abrir el <strong class="text-cyan-300">Inspector de Tablas (ARP, Enrutamiento, NAT, Sockets)</strong>.
+            <p class="text-[11px] text-white/60">
+              Haz clic sobre cualquier equipo para abrir el <strong class="text-[#64D2FF]">Inspector de Tablas (ARP, Enrutamiento, NAT, Sockets)</strong>.
             </p>
           </div>
           <!-- Barra rápida de acceso a equipos -->
           <div class="flex items-center gap-1.5 text-xs">
-            <span class="text-[10px] font-mono text-slate-500 uppercase mr-1">Dispositivos:</span>
+            <span class="text-[10px] font-mono text-white/40 uppercase mr-1">Dispositivos:</span>
             <div id="gwQuickDevices" class="flex flex-wrap items-center gap-1.5"></div>
           </div>
         </div>
 
         <!-- Canvas de Red -->
-        <div class="relative w-full overflow-hidden rounded-xl border border-slate-800/80 bg-[#030712]">
+        <div class="relative w-full overflow-hidden rounded-xl border border-white/[0.08] bg-[#070709]">
           <canvas id="gwTopologyCanvas" class="w-full block" style="height: 300px;"></canvas>
         </div>
 
         <!-- Tira de Trama en Tiempo Real y Botón de Inspección de Paquete -->
-        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 bg-slate-900/90 border border-slate-800 p-3 rounded-xl">
+        <div class="apple-card p-3 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
           <div class="flex items-center gap-2 overflow-x-auto w-full sm:w-auto">
-            <span class="text-[10px] font-mono uppercase font-bold text-slate-400 shrink-0">Trama Actual:</span>
-            <div id="gwPacketSummary" class="text-xs font-mono text-slate-300"></div>
+            <span class="text-[10px] font-mono uppercase font-bold text-white/50 shrink-0">Trama Actual:</span>
+            <div id="gwPacketSummary" class="text-xs font-mono text-white/90"></div>
           </div>
-          <button id="btnGwInspectPacket" class="shrink-0 px-3.5 py-1.5 bg-gradient-to-r from-purple-700 to-indigo-700 hover:from-purple-600 hover:to-indigo-600 text-white rounded-lg text-xs font-mono font-bold shadow-md shadow-purple-950/50 transition">
+          <button id="btnGwInspectPacket" class="shrink-0 apple-btn-primary text-xs font-mono font-semibold py-1.5 px-3.5">
             Inspeccionar Cabeceras L2-L7
           </button>
         </div>
 
         <!-- Barra de Progreso y Controles de Pasos -->
         <div class="space-y-3 pt-2">
-          <div class="w-full bg-slate-900 h-1.5 rounded-full overflow-hidden border border-slate-800">
-            <div id="gwProgressBar" class="bg-gradient-to-r from-cyan-500 via-indigo-500 to-purple-500 h-full w-0 transition-all duration-300"></div>
+          <div class="w-full bg-white/[0.06] h-1.5 rounded-full overflow-hidden border border-white/[0.08]">
+            <div id="gwProgressBar" class="bg-gradient-to-r from-[#64D2FF] via-[#5E5CE6] to-[#BF5AF2] h-full w-0 transition-all duration-300"></div>
           </div>
 
           <div class="flex flex-wrap items-center justify-between gap-3">
             <div class="flex items-center gap-3">
-              <span id="gwStepBadge" class="px-2.5 py-1 rounded bg-slate-800 border border-slate-700 font-mono text-xs text-cyan-300 font-bold">Paso 1</span>
+              <span id="gwStepBadge" class="apple-badge apple-badge-blue font-mono text-xs">Paso 1</span>
               <div>
-                <span id="gwStepLabel" class="text-xs font-bold text-slate-200">En reposo</span>
-                <p id="gwStepDesc" class="text-[11px] text-slate-400">Esperando inicio de la comunicación.</p>
+                <span id="gwStepLabel" class="text-xs font-bold text-white">En reposo</span>
+                <p id="gwStepDesc" class="text-[11px] text-white/60">Esperando inicio de la comunicación.</p>
               </div>
             </div>
 
             <div class="flex items-center gap-2">
-              <button id="btnGwPrev" class="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-white rounded-lg text-xs font-semibold transition flex items-center gap-1">
+              <button id="btnGwPrev" class="apple-btn-secondary text-xs py-1.5 px-3">
                 <span>◀</span> Anterior
               </button>
-              <button id="btnGwNext" class="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-white rounded-lg text-xs font-semibold transition flex items-center gap-1">
+              <button id="btnGwNext" class="apple-btn-secondary text-xs py-1.5 px-3">
                 Siguiente <span>▶</span>
               </button>
-              <button id="btnGwStart" class="px-4 py-1.5 bg-cyan-600 hover:bg-cyan-500 text-white rounded-lg font-semibold text-xs transition shadow-md shadow-cyan-950/50">
+              <button id="btnGwStart" class="apple-btn-primary text-xs py-1.5 px-4 font-semibold">
                 Iniciar Animación
               </button>
-              <button id="btnGwReset" class="text-xs text-slate-400 hover:text-white px-2.5 py-1.5 rounded transition">
+              <button id="btnGwReset" class="text-xs text-white/50 hover:text-white px-2.5 py-1.5 rounded transition">
                 Reiniciar
               </button>
             </div>
@@ -636,92 +659,93 @@
         <div id="gwExplanationBox"></div>
 
         <!-- ================= SECCIÓN DE COMPARATIVA DE 5 ROLES ================= -->
-        <div class="mt-8 pt-6 border-t border-slate-800/80 space-y-4">
+        <div class="mt-8 pt-6 border-t border-white/[0.08] space-y-4">
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
             <div>
-              <span class="text-[10px] font-mono uppercase tracking-wider text-cyan-400 font-bold">Claridad Conceptual de Redes</span>
-              <h3 class="text-sm sm:text-base font-bold text-white mt-0.5">
+              <span class="apple-badge apple-badge-blue text-[10px] font-mono uppercase tracking-wider">Claridad Conceptual de Redes</span>
+              <h3 class="text-sm sm:text-base font-bold text-white mt-1">
                 COMPARATIVA DE ROLES: SWITCH vs ROUTER vs DEFAULT GATEWAY vs PROTOCOL GATEWAY vs ACCESS POINT
               </h3>
-              <p class="text-xs text-slate-400">
+              <p class="text-xs text-white/60">
                 Selecciona un rol para analizar sus diferencias en capas OSI, direcciones de decisión, dominios y funciones en la vida real.
               </p>
             </div>
-            <!-- Botones de Roles -->
-            <div class="flex flex-wrap gap-1.5">
-              <button data-role="switch" class="gw-role-btn px-3 py-1.5 rounded text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 hover:text-white transition">
+            <!-- Botones de Roles en Segmented Capsule -->
+            <div class="apple-nav-capsule flex flex-wrap gap-1 p-1">
+              <button data-role="switch" class="gw-role-btn nav-tab-btn tab-inactive px-3 py-1 rounded-full text-xs font-medium">
                 Switch (L2)
               </button>
-              <button data-role="router" class="gw-role-btn px-3 py-1.5 rounded text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 hover:text-white transition">
+              <button data-role="router" class="gw-role-btn nav-tab-btn tab-inactive px-3 py-1 rounded-full text-xs font-medium">
                 Router (L3)
               </button>
-              <button data-role="default_gateway" class="gw-role-btn px-3 py-1.5 rounded text-xs font-semibold bg-purple-600 text-white shadow-md shadow-purple-900/50 transition">
+              <button data-role="default_gateway" class="gw-role-btn nav-tab-btn tab-active px-3 py-1 rounded-full text-xs font-semibold">
                 Default Gateway
               </button>
-              <button data-role="protocol_gateway" class="gw-role-btn px-3 py-1.5 rounded text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 hover:text-white transition">
+              <button data-role="protocol_gateway" class="gw-role-btn nav-tab-btn tab-inactive px-3 py-1 rounded-full text-xs font-medium">
                 Protocol Gateway (L3-L7)
               </button>
-              <button data-role="access_point" class="gw-role-btn px-3 py-1.5 rounded text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 hover:text-white transition">
+              <button data-role="access_point" class="gw-role-btn nav-tab-btn tab-inactive px-3 py-1 rounded-full text-xs font-medium">
                 Access Point (L2 RF)
               </button>
             </div>
           </div>
 
           <!-- Tarjeta de Detalles del Rol Seleccionado -->
-          <div id="gwRoleDetails" class="bg-slate-900/90 p-4 rounded-xl border border-slate-800"></div>
+          <div id="gwRoleDetails" class="apple-card p-5"></div>
         </div>
       </div>
     </section>
 
-    <!-- ================= TAB 6: GLOSARIO ================= -->
+    <!-- ================= TAB 5: GLOSARIO ================= -->
     <section id="tab-glossary" class="tab-pane hidden space-y-6">
-      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 bg-slate-900/80 border border-slate-800 p-4 sm:p-5 rounded-xl">
+      <div class="apple-card p-4 sm:p-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
         <div>
-          <span class="text-xs font-mono uppercase tracking-wider text-cyan-400 font-bold">Glosario de Términos Oficiales</span>
-          <h2 class="text-lg sm:text-xl font-bold text-white mt-0.5">
+          <span class="apple-badge apple-badge-blue text-[10px] uppercase font-mono tracking-wider">Glosario de Términos Oficiales</span>
+          <h2 class="text-lg sm:text-xl font-bold text-white tracking-tight mt-1">
             DICCIONARIO TÉCNICO DE TELECOMUNICACIONES & INTERCONEXIÓN
           </h2>
-          <p class="text-xs text-slate-400 mt-1">24 definiciones formales extraídas del documento de investigación de la UPTC.</p>
+          <p class="text-xs text-white/60 mt-1">24 definiciones formales extraídas del documento de investigación de la UPTC.</p>
         </div>
-        <div class="w-full md:w-72">
-          <input type="text" id="glossarySearch" placeholder="Buscar término o concepto..." class="w-full bg-slate-950 border border-slate-700 rounded-lg px-3 py-2 text-xs text-slate-200 placeholder-slate-500 focus:outline-none focus:border-cyan-500 transition">
+        <div class="w-full md:w-80">
+          <input type="text" id="glossarySearch" placeholder="Buscar término o concepto..." class="apple-input w-full">
         </div>
       </div>
-      <div id="glossaryCategories" class="flex flex-wrap gap-1.5"></div>
+      <div id="glossaryCategories" class="flex flex-wrap gap-2"></div>
       <div id="glossaryGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
     </section>
 
   </main>
-<!-- MODAL INSPECTOR DE PAQUETES GATEWAY -->
-  <div id="gwPacketModal" class="modal-overlay hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
-    <div class="bg-slate-900 border border-slate-700 rounded-2xl max-w-xl w-full p-5 space-y-4 shadow-2xl">
-      <div class="flex items-center justify-between border-b border-slate-800 pb-2">
-        <h3 id="gwModalTitle" class="text-xs font-bold text-cyan-400 font-mono">Inspección de Trama</h3>
-        <button id="closeGwModal" class="text-slate-400 hover:text-white text-sm font-bold">X</button>
+
+  <!-- MODAL INSPECTOR DE PAQUETES GATEWAY (Apple Liquid Glass Sheet) -->
+  <div id="gwPacketModal" class="modal-overlay hidden fixed inset-0 z-50 bg-black/60 backdrop-blur-xl flex items-center justify-center p-4">
+    <div class="apple-glass-modal max-w-xl w-full p-6 space-y-4 shadow-2xl">
+      <div class="flex items-center justify-between border-b border-white/[0.08] pb-3">
+        <h3 id="gwModalTitle" class="text-xs font-semibold text-[#64D2FF] font-mono tracking-wider">Inspección de Trama</h3>
+        <button id="closeGwModal" class="w-7 h-7 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center text-xs font-bold transition">✕</button>
       </div>
       <div id="gwModalContent" class="pt-1"></div>
     </div>
   </div>
+
   <!-- MODAL INSPECTOR DE DISPOSITIVOS -->
-  <div id="gwDevModal" class="modal-overlay hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
-    <div class="bg-slate-900 border border-slate-700 rounded-2xl max-w-3xl w-full p-5 space-y-4 shadow-2xl max-h-[90vh] overflow-y-auto">
-      <div class="flex items-center justify-between border-b border-slate-800 pb-2">
-        <h3 id="gwDevModalTitle" class="text-xs font-bold text-cyan-400 font-mono">Inspección de Dispositivo</h3>
-        <button id="closeGwDevModal" class="text-slate-400 hover:text-white text-xs font-bold px-2 py-1 rounded bg-slate-800 hover:bg-slate-700">Cerrar [X]</button>
+  <div id="gwDevModal" class="modal-overlay hidden fixed inset-0 z-50 bg-black/60 backdrop-blur-xl flex items-center justify-center p-4">
+    <div class="apple-glass-modal max-w-3xl w-full p-6 space-y-4 shadow-2xl max-h-[90vh] overflow-y-auto">
+      <div class="flex items-center justify-between border-b border-white/[0.08] pb-3">
+        <h3 id="gwDevModalTitle" class="text-xs font-semibold text-[#64D2FF] font-mono tracking-wider">Inspección de Dispositivo</h3>
+        <button id="closeGwDevModal" class="apple-btn-secondary text-xs py-1 px-3">Cerrar</button>
       </div>
       <div id="gwDevModalContent" class="pt-1"></div>
     </div>
   </div>
 
-
-  <!-- FOOTER INSTITUCIONAL -->
-  <footer class="border-t border-slate-800/80 bg-slate-950 py-6 text-xs text-slate-500">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+  <!-- FOOTER INSTITUCIONAL (Minimal Apple Chrome) -->
+  <footer class="border-t border-white/[0.08] bg-[#0A0A0D] py-8 text-xs text-white/50 mt-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
       <div>
-        <p class="font-semibold text-slate-400">Universidad Pedagógica y Tecnológica de Colombia (UPTC)</p>
-        <p class="text-[11px]">Facultad de Ingeniería · Escuela de Ingeniería de Sistemas y Computación · Tunja, 2026</p>
+        <p class="font-semibold text-white/80">Universidad Pedagógica y Tecnológica de Colombia (UPTC)</p>
+        <p class="text-[11px] text-white/40 mt-0.5">Facultad de Ingeniería · Escuela de Ingeniería de Sistemas y Computación · Tunja, 2026</p>
       </div>
-      <div class="font-mono text-[11px] text-slate-500">
+      <div class="font-mono text-[11px] text-white/40">
         Autores: L. Hernández · D. Naranjo · A. Forero
       </div>
     </div>

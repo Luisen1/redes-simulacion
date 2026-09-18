@@ -19,12 +19,12 @@ function initTabs() {
       const targetId = btn.dataset.tab;
 
       tabButtons.forEach(b => {
-        b.classList.remove("border-cyan-400", "text-cyan-400", "bg-slate-800/80");
-        b.classList.add("border-transparent", "text-slate-400", "hover:text-slate-200");
+        b.classList.remove("tab-active", "border-cyan-400", "text-cyan-400", "bg-slate-800/80");
+        b.classList.add("tab-inactive");
       });
 
-      btn.classList.add("border-cyan-400", "text-cyan-400", "bg-slate-800/80");
-      btn.classList.remove("border-transparent", "text-slate-400");
+      btn.classList.add("tab-active");
+      btn.classList.remove("tab-inactive", "border-transparent", "text-slate-400");
 
       tabPanes.forEach(pane => {
         if (pane.id === targetId) {
@@ -60,7 +60,7 @@ function initGlossary() {
 
   if (categoryContainer) {
     categoryContainer.innerHTML = categories.map(cat => `
-      <button class="glossary-cat-btn px-2.5 py-1 rounded-full text-xs font-mono font-medium border transition ${cat === 'Todas' ? 'bg-cyan-950 border-cyan-500 text-cyan-300' : 'bg-slate-800 border-slate-700 text-slate-400 hover:text-slate-200'}" data-cat="${cat}">
+      <button class="glossary-cat-btn px-3 py-1 rounded-full text-xs font-medium border transition ${cat === 'Todas' ? 'bg-white/20 border-white/30 text-white font-semibold shadow-sm' : 'bg-white/[0.04] border-white/10 text-white/60 hover:text-white hover:bg-white/[0.08]'}" data-cat="${cat}">
         ${cat}
       </button>
     `).join("");
@@ -69,8 +69,8 @@ function initGlossary() {
       btn.addEventListener("click", () => {
         activeCategory = btn.dataset.cat;
         categoryContainer.querySelectorAll(".glossary-cat-btn").forEach(b => {
-          b.className = "glossary-cat-btn px-2.5 py-1 rounded-full text-xs font-mono font-medium border transition " +
-            (b.dataset.cat === activeCategory ? 'bg-cyan-950 border-cyan-500 text-cyan-300' : 'bg-slate-800 border-slate-700 text-slate-400 hover:text-slate-200');
+          b.className = "glossary-cat-btn px-3 py-1 rounded-full text-xs font-medium border transition " +
+            (b.dataset.cat === activeCategory ? 'bg-white/20 border-white/30 text-white font-semibold shadow-sm' : 'bg-white/[0.04] border-white/10 text-white/60 hover:text-white hover:bg-white/[0.08]');
         });
         filterAndRenderGlossary();
       });
@@ -94,7 +94,7 @@ function initGlossary() {
 
     if (filtered.length === 0) {
       container.innerHTML = `
-        <div class="col-span-full text-center py-10 text-slate-500 text-sm font-mono">
+        <div class="col-span-full text-center py-10 text-white/40 text-sm font-mono">
           No se encontraron términos que coincidan con la búsqueda.
         </div>
       `;
@@ -102,15 +102,15 @@ function initGlossary() {
     }
 
     container.innerHTML = filtered.map(item => `
-      <div class="bg-slate-900/70 border border-slate-800 hover:border-cyan-500/40 p-4 rounded-xl transition shadow-lg space-y-2 flex flex-col justify-between">
+      <div class="apple-card p-4 transition space-y-2 flex flex-col justify-between">
         <div>
           <div class="flex items-center justify-between gap-2 mb-1">
-            <h4 class="font-bold text-white text-sm tracking-wide">${item.term}</h4>
-            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 border border-slate-700 text-cyan-400 shrink-0">
+            <h4 class="font-semibold text-white text-sm tracking-tight">${item.term}</h4>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-white/[0.08] border border-white/[0.1] text-white/70 shrink-0">
               ${item.category}
             </span>
           </div>
-          <p class="text-xs text-slate-300 leading-relaxed">${item.definition}</p>
+          <p class="text-xs text-white/70 leading-relaxed">${item.definition}</p>
         </div>
       </div>
     `).join("");
@@ -124,11 +124,11 @@ function initComparisonTable() {
   if (!tbody) return;
 
   tbody.innerHTML = COMPARISON_DATA.map((row, idx) => `
-    <tr class="border-b border-slate-800/80 hover:bg-slate-800/30 transition text-xs">
-      <td class="py-3 px-4 font-bold text-cyan-300 align-top bg-slate-900/40">${row.criterio}</td>
-      <td class="py-3 px-4 text-slate-300 align-top leading-relaxed border-l border-slate-800/60">${row.hub}</td>
-      <td class="py-3 px-4 text-slate-300 align-top leading-relaxed border-l border-slate-800/60">${row.repetidor}</td>
-      <td class="py-3 px-4 text-slate-200 align-top leading-relaxed border-l border-slate-800/60 bg-cyan-950/10 font-medium">${row.gateway}</td>
+    <tr class="border-b border-white/[0.06] hover:bg-white/[0.03] transition text-xs">
+      <td class="py-3 px-4 font-semibold text-[#64D2FF] align-top bg-white/[0.02]">${row.criterio}</td>
+      <td class="py-3 px-4 text-white/80 align-top leading-relaxed border-l border-white/[0.06]">${row.hub}</td>
+      <td class="py-3 px-4 text-white/80 align-top leading-relaxed border-l border-white/[0.06]">${row.repetidor}</td>
+      <td class="py-3 px-4 text-white/95 align-top leading-relaxed border-l border-white/[0.06] bg-white/[0.03] font-medium">${row.gateway}</td>
     </tr>
   `).join("");
 }
